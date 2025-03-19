@@ -2,5 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+@font-face {
+  font-family: "Gilroy";
+  src: url("/src/assets/fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-family: "Gilroy", sans-serif;
+}
