@@ -1,14 +1,16 @@
 
 import './App.css'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
 
-
   return (
     <>
-    <div className="text-4xl flex text-red-500 justify-center items-center h-screen w-full">
-  hi
-</div>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
+      <h1 className="text-4xl font-bold">Hello, Tailwind Dark Mode! 🌗</h1>
+      <p className="mt-2">Click the button to switch themes.</p>
+      <ThemeToggle />
+    </div>
 
     </>
   )
