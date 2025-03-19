@@ -10,20 +10,20 @@ export default {
             gilroy: ["Gilroy", "sans-serif"], // Add custom font
           },
       extend: {
-        colors:{
-            theme_light_blue: "#01D3FF",
-            theme_red: "#FF2222",
-            theme_white:"#FFFFFF",
-            theme_black:"#000000",
-            card_dtheme: "#1C1C65",
-            card_ltheme: "#EAEAEA99",
-            active_grid_card_bg: "#0095FF66",
-            trade_text_green:"#22C478",
-            trade_text_red:"#F23645",
-            trade_text_gray:"#DBDBDB",
-            trade_title_gray:"#C7C7C7",
-            trade_card_color: "#00CDF933"
-        }
+        colors: {
+            themeBlue: "#01D3FF",
+            themeRed: "#FF2222",
+            themeWhite: "#FFFFFF",
+            themeBlack: "#000000",
+            cardDark: "#1C1C65",
+            cardLight: "#EAEAEA99",
+            activeCardBg: "#0095FF66",
+            tradeGreen: "#22C478",
+            tradeRed: "#F23645",
+            tradeGray: "#DBDBDB",
+            titleGray: "#C7C7C7",
+            tradeCardBg: "#00CDF933"
+        }        
       },
     },
     plugins: [],
