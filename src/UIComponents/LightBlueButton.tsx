@@ -10,7 +10,7 @@ interface GradientButtonProps {
   fontSize?: string; // Font size (e.g., text-sm, text-lg)
 }
 
-export default function GradientButton({
+export default function LightBlueButton({
   text,
   onClick,
   className = "",
