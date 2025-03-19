@@ -23,7 +23,10 @@ export default {
             tradeGray: "#DBDBDB",
             titleGray: "#C7C7C7",
             tradeCardBg: "#00CDF933"
-        }        
+        } , 
+        screens: {
+          'xs': { max: '480px' }, // Applies to screens BELOW 480px
+        }     
       },
     },
     plugins: [],
