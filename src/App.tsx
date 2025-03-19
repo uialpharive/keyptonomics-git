@@ -1,19 +1,15 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Wallet from "./Pages/Wallet";
 
-import './App.css'
-import ThemeToggle from './components/ThemeToggle'
-
-function App() {
-
+export default function App() {
   return (
-    <>
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
-      <h1 className="text-4xl font-bold">Hello, Tailwind Dark Mode! 🌗</h1>
-      <p className="mt-2">Click the button to switch themes.</p>
-      <ThemeToggle />
-    </div>
-
-    </>
-  )
+    <Router>
+      <div className="p-5">
+        <Routes>
+          <Route path="/wallet" element={<Wallet />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
-
-export default App
