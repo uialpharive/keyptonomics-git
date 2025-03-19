@@ -6,6 +6,7 @@ import Wallet from "./Pages/Wallet";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
+import Stake from "./Pages/Stake";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/stake" element={<Stake/>} />
         </Routes>
       </div>
     </Router>

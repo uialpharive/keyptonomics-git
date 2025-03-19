@@ -2,33 +2,34 @@
 export default {
     darkMode: "class", // Enables dark mode via a CSS class
     content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}",
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         fontFamily: {
             gilroy: ["Gilroy", "sans-serif"], // Add custom font
-          },
-      extend: {
-        colors: {
-            themeBlue: "#01D3FF",
-            themeRed: "#FF2222",
-            themeWhite: "#FFFFFF",
-            themeBlack: "#000000",
-            cardDark: "#1C1C65",
-            cardLight: "#EAEAEA99",
-            activeCardBg: "#0095FF66",
-            tradeGreen: "#22C478",
-            tradeRed: "#F23645",
-            tradeGray: "#DBDBDB",
-            titleGray: "#C7C7C7",
-            tradeCardBg: "#00CDF933"
-        } , 
-        screens: {
-          'xs': { max: '480px' }, // Applies to screens BELOW 480px
-        }     
-      },
+            walsheim: ["GT Walsheim Trial", "sans-serif"],
+        },
+        extend: {
+            colors: {
+                themeBlue: "#01D3FF",
+                themeBlueT: "#66B1E5",
+                themeRed: "#FF2222",
+                themeWhite: "#FFFFFF",
+                themeBlack: "#000000",
+                cardDark: "#1C1C65",
+                cardLight: "#EAEAEA99",
+                activeCardBg: "#0095FF66",
+                tradeGreen: "#22C478",
+                tradeRed: "#F23645",
+                tradeGray: "#DBDBDB",
+                titleGray: "#C7C7C7",
+                tradeCardBg: "#00CDF933"
+            },
+            screens: {
+              'xs': { max: '480px' }, // Applies to screens BELOW 480px
+            } 
+        },
     },
     plugins: [],
-  };
-  
+};
