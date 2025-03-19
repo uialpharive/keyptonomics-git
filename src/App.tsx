@@ -14,7 +14,7 @@ export default function App() {
       <div className="">
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/registart" element={<Register />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/home" element={<Home/>} />
           <Route path="/stake" element={<Stake/>} />
