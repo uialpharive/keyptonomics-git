@@ -1,5 +1,6 @@
+import React from "react";
 import { useState } from "react";
-import { Search ,X} from "lucide-react";
+import { Bitcoin, Search ,X} from "lucide-react";
 import Header from '../components/Header';
 import GradientButton from '../UIComponents/GradientButton';
 import ada from '../assets/images/ada.svg';
@@ -26,44 +27,168 @@ import xrp from '../assets/images/xrp.svg';
 import yfi from '../assets/images/yfi.svg';
 import InputField from "../UIComponents/GrayInputButton";
 import ThemeToggle from "../components/ThemeToggle";
+import WhiteBtn from "../UIComponents/whiteBtn";
 
-const stakingData = [
+interface StakeCardProps {
+    id:number;
+    icon: string; // Example: Coin icon
+    title: string; // Example: "LTC"
+    value: string; // Example: "96.330000"
+    text1?: string; // Example: "Available Balance"
+    text1Value?: string; // Example: "0.00 LTC"
+    text2?: string; // Example: "Available Balance USDT"
+    text2Value?: string; // Example: "$ 0"
+    text3?: string; // Example: "APY"
+    text3Value?: string; // Example: "3.5%"
+    buttonText?: string; // Example: "Stake Now"
+  }
+const stakeData = [
     {
-      id: 1,
+        id:1,
       icon: btc,
-      name: "BTC",
-      balance: 564.69,
-      availableBalance: 0.0,
-      availableBalanceUSDT: 0,
-      apy: "4.5%",
+      title: "BTC",
+      value: "96.330000",
+      text1: "Available Balance",
+      text1Value: "0.00 LTC",
+      text2: "Available Balance USDT",
+      text2Value: "$ 0",
+      text3: "APY",
+      text3Value: "3.5%",
     },
     {
-      id: 2,
-      icon: bch,
-      name: "BCH",
-      balance: 120.15,
-      availableBalance: 10.2,
-      availableBalanceUSDT: 200,
-      apy: "5.2%",
+        id:2,
+        icon: bch,
+      title: "BCH",
+      value: "1500.00",
+      text1: "Available Balance",
+      text1Value: "1000 USDT",
+      text2: "Staked Amount",
+      text2Value: "$ 500",
+      text3: "APY",
+      text3Value: "4.2%",
     },
     {
-      id: 3,
-      icon: eth,
-      name: "ETH",
-      balance: 1000.0,
-      availableBalance: 500.5,
-      availableBalanceUSDT: 500.5,
-      apy: "3.8%",
+        id:3,
+        icon: eth,
+      title: "ETH",
+      value: "2.345678",
+      text1: "Available Balance",
+      text1Value: "0.50 ETH",
+      text2: "Available Balance USDT",
+      text2Value: "$ 200",
+      text3: "APY",
+      text3Value: "5.0%",
     },
-    {
-      id: 3,
-      icon: bnb,
-      name: "BNB",
-      balance: 1000.0,
-      availableBalance: 500.5,
-      availableBalanceUSDT: 500.5,
-      apy: "3.8%",
-    },
+    {id:4,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:5,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:6,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:7,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:8,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:9,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:10,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:11,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:12,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
+    {id:13,
+        icon: bnb,
+        title: "BNB",
+        value: "2.345678",
+        text1: "Available Balance",
+        text1Value: "0.50 ETH",
+        text2: "Available Balance USDT",
+        text2Value: "$ 200",
+        text3: "APY",
+        text3Value: "5.0%",
+      },
   ];
 
 const Stake = () => {
@@ -71,17 +196,19 @@ const Stake = () => {
     const [selectedStake, setSelectedStake] = useState<number | null>(null);
     const [searchTerm,setSearchTerm] = useState('');
 
-    const filtercoin = stakingData.filter((coin) =>
-    coin.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtercoin = stakeData.filter((coin) =>
+    coin.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
   return (
     <>
     <Header/>
     
-    <div className="max-w-7xl mx-auto p-4 mt-3 mb-6">
-    <div className="relative p-4 rounded-lg border-2 border-sky-400" style={{boxShadow: "0px 10px 20px 0px #07071A26"}}>
-    <div className="w-full flex">
+   
+    {/* <div className="relative p-4 rounded-lg border-2 border-sky-400" style={{boxShadow: "0px 10px 20px 0px #07071A26"}}>
+    <div className="w-full flex"> */}
+        <div className={`relative max-w-7xl mx-auto p-4 mt-3 mb-6 rounded-xl bg-gradient-to-r from-[#66B1E5] to-[#2954A3]`}>
+        <div className="flex items-center justify-center  rounded-xl h-full w-full ">
       {/* Tab Buttons */}
       <div className="flex gap-3">
       <button
@@ -116,46 +243,95 @@ const Stake = () => {
       {activeTab === "tab1" && 
       <>
        <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-3">
-      {stakingData.map((item) => (
-        <div
-          key={item.id}
-          className="w-full p-5 mx-auto hover:bg-activeCardBg rounded-2xl border border-blue-500 shadow-lg"
-        >
-          <div className="flex items-center gap-3 mb-3">
-            <img src={item.icon} alt={item.name} className="w-8 h-8" />
-            <h2 className="text-lg font-medium">{item.name}</h2>
-            <span className="ml-auto">{item.balance}</span>
-          </div>
-          <hr className="border-gray-700 mb-3" />
-          <p className="text-sm mb-2 mt-1">
-            Available Balance <span className="float-right">{item.availableBalance} {item.name}</span>
-          </p>
-          <p className="text-sm mb-2">
-            Available Balance USDT <span className="float-right">${item.availableBalanceUSDT}</span>
-          </p>
-          <p className="text-sm mb-2">
-            APY <span className="float-right text-themeBlue">{item.apy}</span>
-          </p>
-         <GradientButton onClick={() => setSelectedStake(item.id)} text="Stake Now" paddingX='px-8' paddingY='py-1' fontSize='text-sx' className='hover:from-[#fff] hover:to-[#FFFFFF]  mt-6 mx-auto w-fit text-center flex justify-center rounded-lg hover:!text-black border-2 hover:!border-[#2954A3]'/>
-       
+      {stakeData.map((item) => (
+      <div
+      key={item.id}
+      className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3]"
+    >
+      <div className="flex flex-col bg-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
+        <div className="flex items-center gap-3 mb-3">
+          <img src={item.icon} alt={item.title} className="w-8 h-8" />
+          <h2 className="text-lg font-medium">{item.title}</h2>
+          <span className="ml-auto">{item.value}</span>
         </div>
+        <hr className="border-gray-700 mb-3" />
+        <p className="text-sm mb-2 mt-1">
+          Available Balance{" "}
+          <span className="float-right">{item.text1Value} {item.title}</span>
+        </p>
+        <p className="text-sm mb-2">
+          Available Balance USDT{" "}
+          <span className="float-right">${item.text2Value}</span>
+        </p>
+        <p className="text-sm mb-2">
+          APY <span className="float-right text-themeBlue">{item.text3Value}</span>
+        </p>
+        <GradientButton
+          onClick={() => setSelectedStake(item.id)}
+          text="Stake Now"
+          paddingX="px-8"
+          paddingY="py-1"
+          fontSize="text-sx"
+          className="hover:from-[#fff] hover:to-[#FFFFFF] mt-6 mx-auto w-fit text-center flex 
+            justify-center rounded-lg hover:!text-black border-2 hover:!border-[#2954A3]"
+        />
+      </div>
+    </div>
+    
       ))}
       </div>
       </>   
       }
         {activeTab === "tab2" &&  
          <>
-         </>}
+       <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-3">
+      {stakeData.map((item) => (
+      <div
+      key={item.id}
+      className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3]"
+    >
+      <div className="flex flex-col bg-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
+        <div className="flex items-center gap-3 mb-3">
+          <img src={item.icon} alt={item.title} className="w-8 h-8" />
+          <h2 className="text-lg font-medium">{item.title}</h2>
+          <span className="ml-auto">{item.value}</span>
+        </div>
+        <hr className="border-gray-700 mb-3" />
+        <p className="text-sm mb-2 mt-1">
+          Available Balance{" "}
+          <span className="float-right">{item.text1Value} {item.title}</span>
+        </p>
+        <p className="text-sm mb-2">
+          Available Balance USDT{" "}
+          <span className="float-right">${item.text2Value}</span>
+        </p>
+        <p className="text-sm mb-2">
+          APY <span className="float-right text-themeBlue">{item.text3Value}</span>
+        </p>
+        <GradientButton
+          onClick={() => setSelectedStake(item.id)}
+          text="Stake Now"
+          paddingX="px-8"
+          paddingY="py-1"
+          fontSize="text-sx"
+          className="hover:from-[#fff] hover:to-[#FFFFFF] mt-6 mx-auto w-fit text-center flex 
+            justify-center rounded-lg hover:!text-black border-2 hover:!border-[#2954A3]"
+        />
       </div>
-  
     </div>
+    
+      ))}
+      </div>
+         </>}
+      </div>    
+  
     </div>
     {selectedStake !== null && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="w-96 p-4 bg-white text-black rounded-xl shadow-lg">
             <div className="flex justify-between">
             <h2 className="text-xl font-semibold mb-4">Staking </h2>
-            {/* {stakingData[selectedStake - 1].name} */}
+            {/* {stakeData[selectedStake - 1].name} */}
             <X className="text-[#2B2B2B]" onClick={() => setSelectedStake(null)}/>
             </div>
           <div className="relative">
@@ -167,22 +343,47 @@ const Stake = () => {
 
         {/* BTC Label */}
         <span className="absolute right-4 pl-2 h-11 content-center top-1/2 transform -translate-y-1/2  border-black border-l-2">
-    {stakingData[selectedStake - 1].name}
+    {stakeData[selectedStake - 1].title}
         </span>
         
       </div>
       <p className="text-gray-500 text-sm mt-2 ml-4">≈ $0</p>
+      <div className="flex justify-between mt-5">
+        <p>Interest</p>
+        <p className="font-semibold">0 {stakeData[selectedStake - 1].title} ≈ $ 0</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Available Balance</p>
+        <p className="font-semibold">0.0000 {stakeData[selectedStake - 1].title}</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Minimum Stake</p>
+        <p className="font-semibold">0.001 {stakeData[selectedStake - 1].title}</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Maximum Stake</p>
+        <p className="font-semibold">10,000 {stakeData[selectedStake - 1].title}</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Withdrawal Term</p>
+        <p className="font-semibold">Flexible</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Redemption Period</p>
+        <p className="font-semibold">1 Days</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>Duration (Days)</p>
+        <p className="font-semibold">365</p>
+      </div>
+      <div className="flex justify-between mt-1">
+        <p>APY</p>
+        <p className="font-semibold">9.5%</p>
+      </div>
      
-            <div className="mt-4 flex justify-end gap-2">
-              <button
-                className="px-4 py-2 bg-gray-600 rounded-lg hover:bg-gray-700"
-                onClick={() => setSelectedStake(null)}
-              >
-                Cancel
-              </button>
-              <button className="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-600">
-                Confirm Stake
-              </button>
+            <div className="mt-6  flex w-full justify-between gap-2">
+            <WhiteBtn text={"Cancel"} width="!w-full" onClick={() => setSelectedStake(null)}/>
+            <GradientButton text={"Confirm"}  className="!w-full" />
             </div>
           </div>
         </div>

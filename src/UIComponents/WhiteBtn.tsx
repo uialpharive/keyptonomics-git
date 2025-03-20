@@ -16,7 +16,7 @@ export default function whiteBtn({
   className = "",
   paddingX = "px-6",
   paddingY = "py-3",
-  width = "w-auto",
+  width = "",
   fontSize = "text-lg",
 }: GradientButtonProps) {
   return (
