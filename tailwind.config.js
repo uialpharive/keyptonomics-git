@@ -29,6 +29,9 @@ export default {
                 headerBgDark2:"#262c3e",
 
             },
+            screens: {
+              'xs': { max: '480px' }, // Applies to screens BELOW 480px
+            } 
         },
     },
     plugins: [],

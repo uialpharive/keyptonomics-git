@@ -23,6 +23,7 @@ const availableBalance = [
 const Header = () => {
 
     return (
+
         <>
             <header className=" w-full 
     bg-[linear-gradient(to_bottom,_#ffffff_20%,_#e9ebf4_50%,_#e9ebf4_90%,_#e9ebf4_100%)]
