@@ -26,7 +26,7 @@ export default function GradientButton({
       onClick={onClick}
       className={`rounded-lg text-white 
       bg-gradient-to-r from-[#01D3FF] to-[#2954A3] 
-      hover:opacity-80 transition-all duration-300 ease-in-out 
+      hover:opacity-100 transition-all duration-300 ease-in-out 
       ${paddingX} ${paddingY} ${width} ${fontSize} ${fontWeight} ${className}`}
     >
       {text}

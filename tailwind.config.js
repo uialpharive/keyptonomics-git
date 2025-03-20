@@ -24,7 +24,10 @@ export default {
                 tradeRed: "#F23645",
                 tradeGray: "#DBDBDB",
                 titleGray: "#C7C7C7",
-                tradeCardBg: "#00CDF933"
+                tradeCardBg: "#00CDF933",
+                headerBgDark1:"#242236",
+                headerBgDark2:"#262c3e",
+
             },
         },
     },

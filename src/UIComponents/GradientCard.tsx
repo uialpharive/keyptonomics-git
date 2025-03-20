@@ -3,8 +3,8 @@ import React from "react";
 interface GradientCardProps {
   width?: string; // Example: "w-64"
   height?: string; // Example: "h-40"
-  text: string; // Example: "All Participants"
-  count: string; // Example: "3232+"
+  text?: string; // Example: "All Participants"
+  count?: string; // Example: "3232+"
   Icon: React.ElementType; // Example: User from lucide-react
 }
 
