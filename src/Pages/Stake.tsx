@@ -27,7 +27,7 @@ import xrp from '../assets/images/xrp.svg';
 import yfi from '../assets/images/yfi.svg';
 import InputField from "../UIComponents/GrayInputButton";
 import ThemeToggle from "../components/ThemeToggle";
-import WhiteBtn from "../UIComponents/whiteBtn";
+import WhiteBtn from "../UIComponents/WhiteBtn";
 
 interface StakeCardProps {
     id:number;

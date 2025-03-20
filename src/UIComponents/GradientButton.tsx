@@ -22,14 +22,18 @@ export default function GradientButton({
   fontWeight = "",
 }: GradientButtonProps) {
   return (
-    <button
-      onClick={onClick}
-      className={`rounded-lg text-white 
-      bg-gradient-to-r from-[#01D3FF] to-[#2954A3] 
-      hover:opacity-80 transition-all duration-300 ease-in-out 
-      ${paddingX} ${paddingY} ${width} ${fontSize} ${fontWeight} ${className}`}
-    >
-      {text}
-    </button>
+<button
+  onClick={onClick}
+  className={`group relative overflow-hidden rounded-lg text-white 
+  bg-gradient-to-r from-[#01D3FF] to-[#2954A3] 
+  hover:text-[#2954A3] duration-300 ease-in-out
+  hover:-translate-y-2
+  hover:shadow-[0_8px_20px_0_#00cdf94d] 
+  ${paddingX} ${paddingY} ${width} ${fontSize} ${fontWeight} ${className}`}
+>
+  <span className="absolute inset-0 bg-white scale-0 group-hover:scale-100"></span>
+  <span className="relative z-10">{text}</span>
+</button>
+
   );
 }
