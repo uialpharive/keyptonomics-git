@@ -3,11 +3,14 @@ import { IoIosNotifications } from "react-icons/io"
 import GradientButton from "../UIComponents/GradientButton"
 import GradientCard from "../UIComponents/GradientCard"
 import { Users } from "lucide-react";
+import ThemeToggle from '../components/ThemeToggle'
 
 const menus = ["Home", "Trade", "Stake", "Transactions", " Hedge FlaskRound", "Staking History", "Live Events"]
 const Header = () => {
     return (
+
         <>
+
             <header className="bg-white pt-1 shadow-md">
                 <hr className="h-[5px] bg-themeBlue  border-0" />
                 <nav className=" flex lg:mx-10 items-center gap-10 p-3" aria-label="Global">
@@ -70,6 +73,7 @@ const Header = () => {
                             count="9876+"
                             Icon={Users}
                         /> */}
+                        <ThemeToggle/>
                     </div>
                 </nav>
             </header>

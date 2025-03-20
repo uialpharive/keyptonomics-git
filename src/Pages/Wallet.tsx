@@ -11,8 +11,8 @@ import doge from "../assets/images/doge.svg";
 import shib from "../assets/images/shib.svg";
 import ada from "../assets/images/ada.svg";
 import neo from "../assets/images/neo.svg";
-import WhiteBtn from "../UIComponents/whiteBtn";
-import Header from "../components/Header"
+import Header from "../components/Header";
+import WhiteBtn from "../UIComponents/WhiteBtn"
 
 const Wallet = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,7 +44,7 @@ const Wallet = () => {
   return (
     
     <div>
-        {/* <Header/> */}
+        <Header/>
         <div className="max-w-7xl mx-auto p-4">
       <div
         className="p-8 rounded-xl"
