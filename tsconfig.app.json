@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "SVGComponents.tsx"]
+  "include": ["src", "src/SVGComponents.tsx"]
 }
