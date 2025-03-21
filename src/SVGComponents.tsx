@@ -35,6 +35,65 @@ export const LogoLight = () => {
 
     )
 }
+export const SmallFooterBall = () => {
+    return (
+        <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18.7135" cy="18.7132" r="18.3281" transform="rotate(-68.8114 18.7135 18.7132)" fill="url(#paint0_linear_268_80708)" />
+            <defs>
+                <linearGradient id="paint0_linear_268_80708" x1="18.7135" y1="-7.58367" x2="18.7135" y2="56.6975" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" />
+                    <stop offset="0.223958" stop-color="#6BE4FF" />
+                    <stop offset="0.623188" stop-color="#371B73" stop-opacity="0.6" />
+                    <stop offset="1" stop-color="#0A1153" stop-opacity="0.4" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+    )
+}
+export const MediumFooterBall = () => {
+    return (
+        <svg width="40" height="41" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25.1307" cy="25.7359" r="24.7741" transform="rotate(-68.8114 25.1307 25.7359)" fill="url(#paint0_linear_268_80707)" />
+            <defs>
+                <linearGradient id="paint0_linear_268_80707" x1="25.1307" y1="-9.80951" x2="25.1307" y2="77.0793" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" />
+                    <stop offset="0.223958" stop-color="#6BE4FF" />
+                    <stop offset="0.623188" stop-color="#371B73" stop-opacity="0.6" />
+                    <stop offset="1" stop-color="#0A1153" stop-opacity="0.4" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+    )
+}
+export const LargeFotoerBall = () => {
+    return (
+        <>
+            <svg width="256" height="200" viewBox="0 0 256 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="186" cy="186" r="186" transform="rotate(-180 186 186)" fill="url(#paint0_radial_268_80709)" fill-opacity="0.6" />
+                <defs>
+                    <radialGradient id="paint0_radial_268_80709" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(186 186) rotate(90) scale(186)">
+                        <stop stop-color="#FF65C1" />
+                        <stop offset="1" stop-color="#FF65C1" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <svg width="250" height="132" viewBox="0 0 250 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="141.742" cy="141.376" r="141.382" transform="rotate(-180 141.742 141.376)" fill="url(#paint0_radial_268_80718)" fill-opacity="0.3" />
+                <defs>
+                    <radialGradient id="paint0_radial_268_80718" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.360133 192.807) rotate(-19.6638) scale(300.275)">
+                        <stop offset="0.249306" stop-color="white" />
+                        <stop offset="0.48315" stop-color="#FF8FED" stop-opacity="0.5" />
+                        <stop offset="0.627037" stop-color="#220C7A" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+        </>
+    )
+}
 export const Flag = () => {
     return (
         <svg width="21" height="20" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">

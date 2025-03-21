@@ -28,11 +28,36 @@ export default {
                 headerBgDark1:"#242236",
                 headerBgDark2:"#262c3e",
                 evenTableBg:'#FFFFFF66',
+                headerBgDark1: "#242236",
+                headerBgDark2: "#262c3e",
+                footerColor: "#f5fcff",
+                rootBgColor: "#06031c"
 
             },
             screens: {
-              'xs': { max: '480px' }, // Applies to screens BELOW 480px
-            } 
+                'xs': { max: '480px' }, // Applies to screens BELOW 480px
+                'xs-sm': { max: '640px' },
+                'sm-md': {max:'900px'},
+                'md-lg': '1000px',
+                'lg-xl': '1200px',
+            },
+            spacing: {
+                'xl-mx': 200, // ✅ Correct
+                'lg-mx': 150, // ✅ Correct
+                'md-mx': 100, // ✅ Correct
+                'sm-mx': 50, // ✅ Correct
+                'xs-mx': 10,
+                'xl-px': 200, // ✅ Correct
+                'lg-px': 150, // ✅ Correct
+                'md-px': 100, // ✅ Correct
+                'sm-px': 50, // ✅ Correct
+                'xs-px': 10,
+                'lg-py':20,
+                'md-py':15,
+                'sm-py':10,
+                'xs-py':5,
+            }
+            
         },
     },
     plugins: [],

@@ -2,6 +2,7 @@ import React from "react";
 
 interface GradientCardProps {
     Icon: React.ElementType;
+    className?:string
 }
 
 export default function IconCard({ Icon }: GradientCardProps) {
