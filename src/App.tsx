@@ -10,6 +10,7 @@ import Wallet from "./Pages/Wallet";
 import Header from "./components/Header";
 import Deposit from "./Pages/Deposit";
 import Withdraw from "./Pages/Withdraw";
+import Profile from "./Pages/Profile";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/registart"].includes(location.pathname);
@@ -25,6 +26,7 @@ const Layout = () => {
         <Route path="/stake" element={<Stake/>} />
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
       {/* {!hideHeaderFooter && <Footer />} */}
     </div>
