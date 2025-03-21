@@ -2,21 +2,56 @@ import React, { useState } from "react";
 import bgimg from "../assets/images/bgimage.jfif";
 import logo from "../assets/images/logo.png";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { MdError } from "react-icons/md";
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [errors, setErrors] = useState<any>({});
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+
+    if (!e.target.value) {
+      setErrors({});
+    } else if (!validateEmail(e.target.value)) {
+      setErrors({ email: "Enter a valid email address" });
+    } else {
+      setErrors({});
+    }
+  };
+
+  const handleLogin = () => {
+    toast.success("Verify Successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+    setTimeout(() => {
+      navigate("/home");
+    }, 3000); // Navigate after 3 secondsh-10 w-full
+  };
 
   return (
     <div
       className=" relative w-full h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgimg})` }}
     >
+      <ToastContainer />
       <div className="absolute inset-0 bg-[#1E2637]/30 backdrop-blur-md z-0"></div>
       {/* Centered Logo and Text */}
       <div className="flex justify-center items-center relative z-10">
         <div className="flex xs:mt-[50px] md:mt-[75px] mt-[100px] xs:mb-[25px] mb-[50px]">
           <img src={logo} alt="Logo" className="h-10" />
-          <p className="text-white mt-2 ml-2 text-lg font-semibold">KEYPTONOMICS</p>
+          <p className="text-white mt-2 ml-2 text-lg font-semibold">
+            KEYPTONOMICS
+          </p>
         </div>
       </div>
 
@@ -31,14 +66,35 @@ const Login = () => {
           <div className="flex flex-col bg-[#1e2637] rounded-md p-5 m-3  sm:m-[8px_8px_8px_8px]  md:m-[8px_8px_8px_8px] lg:m-[8px_8px_8px_8px] xl:m-[8px_8px_8px_8px]">
             {" "}
             <h2 className="text-white text-[27px] font-bold mb-7">Login</h2>
-            <p className="text-white text-[13px]">Email Address</p>
-            <input
-              type="email"
-              placeholder="Enter Email Address"
-              className="p-3 rounded-md bg-gray-700 mt-1 text-white border border-gray-500 mb-3"
-            />
-             <div className="relative">
-              <p className="text-white text-[13px]"> Password</p>
+            <p className="text-white mb-1 text-[13px]">Email Address</p>
+            <div className="relative w-full">
+  <input
+    type="email"
+    onChange={handleEmailChange}
+    placeholder="Enter Email Address"
+    className={`p-3 h-10 w-full rounded-md mt-1 text-white border mb-3 outline-none focus:ring-2 pr-10
+      ${
+        errors?.email
+          ? "border-red-700 bg-gray-700 focus:ring-red-700"
+          : "border-gray-500 bg-gray-700 focus:ring-blue-500"
+      }`}
+  />
+  {/* Error Icon */}
+  {errors?.email && (
+    <span className="absolute right-3 top-6 font-semibold   transform -translate-y-1/2 text-red-500">
+    <MdError/>
+    </span>
+  )}
+</div>
+{/* <p className="text-red-700 text-sm mb-1 ml-3 text-left">
+  {errors?.email}
+</p> */}
+
+            {/* <p className="text-red-500 text-sm mb-1 ml-3 text-left">
+  {errors?.email}
+</p> */}
+            <div className="relative">
+              <p className="text-white mb-1 text-[13px]"> Password</p>
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter  Password"
@@ -57,14 +113,23 @@ const Login = () => {
                 )}
               </button>
             </div>
-            <button className="bg-[#00cdf9] shadow-[1px_5px_15px_#4fb2d1] text-[14px] text-white p-3 rounded-md font-semibold">
+            <button
+              onClick={handleLogin}
+              className="bg-[#00cdf9] shadow-[1px_5px_15px_#4fb2d1] text-[14px] text-white p-3 rounded-md font-semibold"
+            >
               Login
             </button>
-            <a href="#" className="text-sm text-[#00cdf9] mt-4 text-center">
+            <a
+              href="/forget_password"
+              className="text-sm text-[#00cdf9] mt-4 text-center"
+            >
               Forgot password?
             </a>
-            <a href="#" className="text-sm text-gray-300 mt-4 text-center">
-            Don't have an account? {" "}
+            <a
+              href="/register"
+              className="text-sm text-gray-300 mt-4 text-center"
+            >
+              Don't have an account?{" "}
               <span className="text-[#00cdf9]">Sign Up</span>
             </a>
           </div>
