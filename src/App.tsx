@@ -10,13 +10,16 @@ import Wallet from "./Pages/Wallet";
 import Header from "./components/Header";
 import Deposit from "./Pages/Deposit";
 import Withdraw from "./Pages/Withdraw";
+import Footer from "./components/Footer";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/registart"].includes(location.pathname);
 
   return (
-    <div>
-      {!hideHeaderFooter && <Header />}
+    <div className="flex flex-col min-h-screen">
+    {!hideHeaderFooter && <Header />}
+    
+    <div className={`flex-grow ${hideHeaderFooter ? "" : "mx-xl-mx"}`}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/registart" element={<Register />} />
@@ -26,8 +29,11 @@ const Layout = () => {
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
       </Routes>
-      {/* {!hideHeaderFooter && <Footer />} */}
     </div>
+    
+    {!hideHeaderFooter && <Footer />}
+  </div>
+  
   );
 };
 export default function App() {
