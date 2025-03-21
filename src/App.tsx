@@ -6,7 +6,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Stake from "./Pages/Stake";
 import Wallet from "./Pages/Wallet";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Deposit from "./Pages/Deposit";
 import Withdraw from "./Pages/Withdraw";
@@ -26,7 +26,7 @@ const Layout = () => {
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
       </Routes>
-      {!hideHeaderFooter && <Footer />}
+      {/* {!hideHeaderFooter && <Footer />} */}
     </div>
   );
 };
