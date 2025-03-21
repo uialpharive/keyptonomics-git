@@ -23,12 +23,12 @@ const notify=[
     >
         <div className="login-notify">
            {notify.map((item, index) =>(
-            <div key={index} className='flex justify-between items-center mb-4 even:bg-gray-100 p-4 even:rounded-lg flex-wrap'>
+            <div key={index} className='flex justify-between items-center mb-4 even:bg-gray-100 p-4 even:rounded-lg flex-wrap dark:even:bg-cardBgDark'>
                <div className="login-part">
-                   <h5 className="relative before:content-['•'] before:absolute before:-left-3 before:text-red-500 before:text-xl font-bold">{item.login}</h5>
-                   <p className=''>{item.sucess}</p>
+                   <h5 className="relative dark:text-white before:content-['•'] before:absolute before:-left-3 before:text-red-500 before:text-xl font-bold">{item.login}</h5>
+                   <p className='dark:text-white'>{item.sucess}</p>
                </div>
-               <div className="login-time">
+               <div className="login-time dark:text-white">
                  <p>{item.time}</p>
                </div>
             </div>
