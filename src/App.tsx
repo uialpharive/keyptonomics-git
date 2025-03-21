@@ -8,6 +8,7 @@ import Wallet from "./Pages/Wallet";
 import Header from "./components/Header";
 import Deposit from "./Pages/Deposit";
 import Withdraw from "./Pages/Withdraw";
+import Profile from "./Pages/Profile";
 import Notification from "./Pages/Notification";
 import Support from "./Pages/Support";
 import Forgetpassword from "./Pages/Auth/Forgetpassword";
@@ -29,6 +30,7 @@ const Layout = () => {
         <Route path="/stake" element={<Stake/>} />
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/notification" element={<Notification/>} />
         <Route path="/support" element={<Support/>} />
       </Routes>
