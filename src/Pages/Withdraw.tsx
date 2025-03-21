@@ -7,8 +7,8 @@ const Withdraw = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center min-h-screen">
-  <div className="w-full max-w-7xl mx-auto p-4">
+      <div className="flex items-center justify-center min-h-[80vh] mt-5">
+  <div className="">
     <div
       className="grid md:grid-cols-2 grid-cols-1 gap-4 p-4 relative rounded-3xl"
       style={{
@@ -26,8 +26,8 @@ const Withdraw = () => {
       >
         <p className="text-themeBlue text-lg font-bold">Withdraw Terms</p>
         <div className="mt-16">
-          <p className="mb-4">The Minimum Withdrawal amount is: 0.000002 USDT</p>
-          <ul className="list-disc pl-5 space-y-2 text-lg space-y-4">
+          <p className="mb-4 dark:text-white">The Minimum Withdrawal amount is: 0.000002 USDT</p>
+          <ul className="list-disc pl-5 space-y-2 text-lg space-y-4 dark:text-white">
             {items.map((item, index) => (
               <li key={index} className="text-base">
                 {item}
@@ -40,24 +40,24 @@ const Withdraw = () => {
         <p className="text-themeBlue text-lg font-bold">USDT Withdraw</p>
         <div className="mt-5">
           <div className="deposit-detail mb-4">
-            <label>Receiver Address</label>
+            <label className="dark:text-white">Receiver Address</label>
             <div className="flex flex-col items-center mt-3">
               <div className="relative w-full">
                 <input
-                  className="w-full p-2 border rounded-md shadow-sm mt-2 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                  className="w-full p-2 shadow-[0px_39.87px_39.87px_0px_rgba(69,42,124,0.15)]  rounded-md bg-inputBg dark:text-white shadow-sm mt-2 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                   placeholder="Please enter withdrawal address here"
                   type="text"
                 />
               </div>
             </div>
             <div className="mt-5">
-              <div className="flex justify-between">
+              <div className="flex justify-between dark:text-white">
                 <label>Withdrawal Amount</label>
                 <label>Max</label>
               </div>
 
               <input
-                className="w-full p-2 border rounded-md shadow-sm mt-2 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                className="w-full p-2 bg-inputBg shadow-[0px_39.87px_39.87px_0px_rgba(69,42,124,0.15)] dark:text-white rounded-md shadow-sm mt-2 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                 defaultValue="0"
                 type="number"
               />

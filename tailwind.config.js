@@ -25,10 +25,14 @@ export default {
                 tradeGray: "#DBDBDB",
                 titleGray: "#C7C7C7",
                 tradeCardBg: "#00CDF933",
+                headerBgDark1:"#242236",
+                headerBgDark2:"#262c3e",
+                evenTableBg:'#FFFFFF66',
                 headerBgDark1: "#242236",
                 headerBgDark2: "#262c3e",
-                footerColor: "#f5fcff",
-                rootBgColor: "#06031c"
+                rootBgColor: "#06031c",
+                cardBgDark: "#E6FFF80A",
+                inputBg:'#FFFFFF33',
 
             },
             screens: {
