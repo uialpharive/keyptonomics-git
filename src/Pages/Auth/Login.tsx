@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import bgimg from "../assets/images/bgimage.jfif";
-import logo from "../assets/images/logo.png";
+import bgimg from "../../assets/images/bgimage.jfif";
+import logo from "../../assets/images/logo.png";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 const Login = () => {

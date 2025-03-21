@@ -33,8 +33,9 @@ export default {
             },
             screens: {
                 'xs': { max: '480px' }, // Applies to screens BELOW 480px
+                'xss': { min: '480px' },
                 'xs-sm': { max: '640px' },
-                'sm-md': {max:'900px'},
+                'sm-md': { max: '900px' },
                 'md-lg': '1000px',
                 'lg-xl': '1200px',
             },
@@ -44,17 +45,21 @@ export default {
                 'md-mx': 100, // ✅ Correct
                 'sm-mx': 50, // ✅ Correct
                 'xs-mx': 10,
-                'xl-px': 200, // ✅ Correct
-                'lg-px': 150, // ✅ Correct
-                'md-px': 100, // ✅ Correct
+                'xl-px': 300, // red
+                'lg-xl-px': 250, //green
+                'lg-px': 250, // ✅orange
+                'md-lg-px': 100,//blue
+                'md-px': 70, // ✅ Correct
                 'sm-px': 50, // ✅ Correct
                 'xs-px': 10,
-                'lg-py':20,
-                'md-py':15,
-                'sm-py':10,
-                'xs-py':5,
+                'lg-py': 20,
+                'md-py': 15,
+                'sm-py': 10,
+                'xs-sm-py': 10,
+                'xs-py': 5,
+                'xl-h-px': 250,
             }
-            
+
         },
     },
     plugins: [],
