@@ -6,8 +6,11 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Stake from "./Pages/Stake";
 import Wallet from "./Pages/Wallet";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Deposit from "./Pages/Deposit";
+import Withdraw from "./Pages/Withdraw";
+import Footer from "./components/Footer";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/registart"].includes(location.pathname);
@@ -22,7 +25,9 @@ const Layout = () => {
         <Route path="/registart" element={<Register />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/stake" element={<Stake />} />
+        <Route path="/stake" element={<Stake/>} />
+        <Route path="/deposit" element={<Deposit/>} />
+        <Route path="/withdraw" element={<Withdraw/>} />
       </Routes>
     </div>
     

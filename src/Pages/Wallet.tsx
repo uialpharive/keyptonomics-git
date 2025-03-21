@@ -11,10 +11,15 @@ import doge from "../assets/images/doge.svg";
 import shib from "../assets/images/shib.svg";
 import ada from "../assets/images/ada.svg";
 import neo from "../assets/images/neo.svg";
-import Header from "../components/Header";
 import WhiteBtn from "../UIComponents/WhiteBtn"
-
+import { useNavigate } from "react-router-dom";
 const Wallet = () => {
+ 
+  const navigate = useNavigate();
+
+
+
+
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("5864852");
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +49,6 @@ const Wallet = () => {
   return (
     
     <div>
-        <Header/>
         <div className="max-w-7xl mx-auto p-4">
       <div
         className="p-8 rounded-xl"
@@ -145,8 +149,8 @@ const Wallet = () => {
             </td>
             <td className="px-6 py-5 text-sm w-1/3">
               <div className="flex flex-row gap-3">
-                <WhiteBtn text="Deposit" />
-                <WhiteBtn text="Withdraw" />
+                <WhiteBtn text="Deposit" onClick={() => navigate("/deposit")} />
+                <WhiteBtn text="Withdraw" onClick={() => navigate("/withdraw")} />
                 <WhiteBtn text="Exchange" />
                 <WhiteBtn text="Stake" />
               </div>
