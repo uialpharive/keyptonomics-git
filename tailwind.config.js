@@ -25,13 +25,24 @@ export default {
                 tradeGray: "#DBDBDB",
                 titleGray: "#C7C7C7",
                 tradeCardBg: "#00CDF933",
-                headerBgDark1:"#242236",
-                headerBgDark2:"#262c3e",
+                headerBgDark1: "#242236",
+                headerBgDark2: "#262c3e",
+                footerColor: "#f5fcff",
 
             },
             screens: {
-              'xs': { max: '480px' }, // Applies to screens BELOW 480px
-            } 
+                'xs': { max: '480px' }, // Applies to screens BELOW 480px
+                'xs-sm': { max: '640px' },
+                'md-lg': '1000px',
+                'lg-xl': '1200px',
+            },
+            spacing: {
+                'xl-mx': 200, // ✅ Correct
+                'lg-mx': 150, // ✅ Correct
+                'md-mx': 100, // ✅ Correct
+                'sm-mx': 50, // ✅ Correct
+            }
+            
         },
     },
     plugins: [],

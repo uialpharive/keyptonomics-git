@@ -13,13 +13,16 @@ import Withdraw from "./Pages/Withdraw";
 import Forgetpassword from "./Pages/Auth/Forgetpassword";
 import Changepassword from "./Pages/Auth/Changepassword";
 import Otpvalidation from "./Pages/Auth/Otpvalidation";
+import Footer from "./components/Footer";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register"].includes(location.pathname);
 
   return (
-    <div>
-      {!hideHeaderFooter && <Header />}
+    <div className="flex flex-col min-h-screen">
+    {!hideHeaderFooter && <Header />}
+    
+    <div className={`flex-grow ${hideHeaderFooter ? "" : "mx-xl-mx"}`}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -32,8 +35,11 @@ const Layout = () => {
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
       </Routes>
-      {/* {!hideHeaderFooter && <Footer />} */}
     </div>
+    
+    {!hideHeaderFooter && <Footer />}
+  </div>
+  
   );
 };
 export default function App() {
