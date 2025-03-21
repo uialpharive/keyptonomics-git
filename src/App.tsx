@@ -19,7 +19,7 @@ const Layout = () => {
     <div className="flex flex-col min-h-screen">
     {!hideHeaderFooter && <Header />}
     
-    <div className={`flex-grow ${hideHeaderFooter ? "" : "mx-xl-mx"}`}>
+    {/* <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/registart" element={<Register />} />
@@ -30,7 +30,21 @@ const Layout = () => {
         <Route path="/withdraw" element={<Withdraw/>} />
       </Routes>
     </div>
-    
+     */}
+     <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
+  <div className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px lg:px-lg-px xl:px-xl-px"> {/* Apply padding only here */}
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/registart" element={<Register />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/stake" element={<Stake />} />
+      <Route path="/deposit" element={<Deposit />} />
+      <Route path="/withdraw" element={<Withdraw />} />
+    </Routes>
+  </div>
+</div>
+
     {!hideHeaderFooter && <Footer />}
   </div>
   

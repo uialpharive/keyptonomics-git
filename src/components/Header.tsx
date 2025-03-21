@@ -40,7 +40,7 @@ const Header = () => {
                             <div className="hidden dark:block">
                                 <LogoDark />
                             </div>
-                            <span className="font-walsheim text-xl font-[500] dark:text-themeWhite xs:hidden  xs-sm:hidden sm:hidden">KEYTONOMICS</span>
+                            <span className="font-walsheim text-xl font-[500] dark:text-themeWhite xs:hidden xs-sm:hidden sm:hidden sm-md:hidden md:flex">KEYTONOMICS</span>
                         </a>
                     </div>
                     {/* line */}
