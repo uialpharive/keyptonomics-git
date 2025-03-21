@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import bgimg from "../assets/images/bgimage.jfif";
-import logo from "../assets/images/logo.png";
+import bgimg from "../../assets/images/bgimage.jfif";
+import logo from "../../assets/images/logo.png";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";

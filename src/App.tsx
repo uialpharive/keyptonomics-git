@@ -1,7 +1,7 @@
 
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Register";
 import Stake from "./Pages/Stake";
 import Wallet from "./Pages/Wallet";
@@ -22,12 +22,12 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {!hideHeaderFooter && <Header />}
-      
-      {/* {!hideHeaderFooter && <Footer />} */}
-      <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
-        <div className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px lg:px-lg-px xl:px-xl-px lg:py-lg-py"> {/* Apply padding only here */}
-        <Routes>
+    {!hideHeaderFooter && <Header />}
+    
+    {/* Main Content Wrapper with flex-grow to push the footer down */}
+    <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
+      <div className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-xl-px xs:py-xs-py xss:mt-5 xs-sm:px-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py">
+      <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget_password" element={<Forgetpassword />} />
@@ -43,11 +43,13 @@ const Layout = () => {
         <Route path="/notification" element={<Notification/>} />
         <Route path="/support" element={<Support/>} />
       </Routes>
-        </div>
       </div>
-
-      {!hideHeaderFooter && <Footer />}
     </div>
+  
+    {/* Footer stays at the bottom */}
+    {!hideHeaderFooter && <Footer />}
+  </div>
+  
 
   );
 };
