@@ -48,7 +48,11 @@ export default {
                 'lg-px': 150, // ✅ Correct
                 'md-px': 100, // ✅ Correct
                 'sm-px': 50, // ✅ Correct
-                'xs-px': 10
+                'xs-px': 10,
+                'lg-py':20,
+                'md-py':15,
+                'sm-py':10,
+                'xs-py':5,
             }
             
         },
