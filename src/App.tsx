@@ -1,15 +1,16 @@
 
-
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Stake from "./Pages/Stake";
 import Wallet from "./Pages/Wallet";
-// import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Deposit from "./Pages/Deposit";
 import Withdraw from "./Pages/Withdraw";
+import Profile from "./Pages/Profile";
+import Notification from "./Pages/Notification";
+import Support from "./Pages/Support";
 import Forgetpassword from "./Pages/Auth/Forgetpassword";
 import Resetpassword from "./Pages/Auth/Resetpassword";
 import Otpvalidation from "./Pages/Auth/Otpvalidation";
@@ -21,10 +22,12 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-    {!hideHeaderFooter && <Header />}
-    
-    <div className={`flex-grow ${hideHeaderFooter ? "" : "mx-xl-mx"}`}>
-      <Routes>
+      {!hideHeaderFooter && <Header />}
+      
+      {/* {!hideHeaderFooter && <Footer />} */}
+      <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
+        <div className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px lg:px-lg-px xl:px-xl-px lg:py-lg-py"> {/* Apply padding only here */}
+        <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget_password" element={<Forgetpassword />} />
@@ -36,19 +39,23 @@ const Layout = () => {
         <Route path="/stake" element={<Stake/>} />
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/notification" element={<Notification/>} />
+        <Route path="/support" element={<Support/>} />
       </Routes>
+        </div>
+      </div>
+
+      {!hideHeaderFooter && <Footer />}
     </div>
-    
-    {!hideHeaderFooter && <Footer />}
-  </div>
-  
+
   );
 };
 export default function App() {
-  
+
   return (
     <Router>
-    <Layout />
-  </Router>
+      <Layout />
+    </Router>
   );
 }

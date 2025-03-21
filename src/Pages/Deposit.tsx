@@ -36,7 +36,7 @@ const Deposit = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto p-4">
+      <div className="">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 p-4 relative rounded-3xl mt-5" style={{
             background:"linear-gradient(105.95deg, rgba(102, 177, 230, 0.2) 24.79%, rgba(41, 84, 163, 0.2) 71.87%)",
             border:"1px solid #2954A3",
