@@ -27,6 +27,7 @@ export default {
                 tradeCardBg: "#00CDF933",
                 headerBgDark1:"#242236",
                 headerBgDark2:"#262c3e",
+                evenTableBg:'#FFFFFF66',
 
             },
             screens: {
