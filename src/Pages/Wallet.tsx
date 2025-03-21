@@ -11,7 +11,6 @@ import doge from "../assets/images/doge.svg";
 import shib from "../assets/images/shib.svg";
 import ada from "../assets/images/ada.svg";
 import neo from "../assets/images/neo.svg";
-import Header from "../components/Header";
 import WhiteBtn from "../UIComponents/WhiteBtn"
 import { useNavigate } from "react-router-dom";
 const Wallet = () => {
@@ -50,7 +49,6 @@ const Wallet = () => {
   return (
     
     <div>
-        <Header/>
         <div className="max-w-7xl mx-auto p-4">
       <div
         className="p-8 rounded-xl"
