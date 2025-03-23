@@ -128,7 +128,7 @@ const Header = () => {
           </div>
         </nav>
         <BalanceSlider availableBalance={availableBalance} />
-        <ResponsiveColorBoxes />
+        {/* <ResponsiveColorBoxes /> */}
       </header>
     </>
   );
