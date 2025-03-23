@@ -51,7 +51,7 @@ const Wallet = () => {
     <div>
         <div className="">
       <div
-        className="p-8 rounded-xl mt-5"
+        className="p-8 rounded-xl"
         style={{
           background:
             "linear-gradient(105.95deg, rgba(102, 177, 230, 0.2) 24.79%, rgba(41, 84, 163, 0.2) 71.87%)",

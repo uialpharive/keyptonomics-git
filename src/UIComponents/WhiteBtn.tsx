@@ -10,7 +10,7 @@ interface GradientButtonProps {
   fontSize?: string; // Font size
 }
 
-export default function whiteBtn({
+export default function WhiteBtn({
   text,
   onClick,
   className = "",

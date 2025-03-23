@@ -2,15 +2,15 @@ import { Bell } from "lucide-react"
 import GradientCard from "../../UIComponents/GradientCard"
 
 const cardData = [
-    { width: "w-[250px]", height: "h-[200px]", text: "All Practicipants", count: "3254+", Icon: Bell },
-    { width: "w-[250px]", height: "h-[200px]", text: "Total Earned", count: "4564466.21+", Icon: Bell },
-    { width: "w-[250px]", height: "h-[200px]", text: "BTC 24H Change", count: "-0.29%", Icon: Bell },
-];
+    { text: "All Participants", count: "3254+", Icon: Bell },
+    { text: "Total Earned", count: "4564466.21+", Icon: Bell },
+    { text: "BTC 24H Change", count: "-0.29%", Icon: Bell },
+  ];
 const CardSection = () => {
     return (
         <>
-            <div className="w-full text-black dark:text-white flex items-start justify-center lg:pt-[80px]  lg:pb-[100px]">
-                <div className="flex gap-4">
+            <div className="w-full text-black dark:text-white flex items-start justify-center ">
+                <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row gap-4 md:gap-6 lg:gap-10 items-center">
                     {cardData.map((card, index) => {
                         let textColor = "text-themeBlue"; // Default: Blue for 1st and 2nd card
 
@@ -23,13 +23,15 @@ const CardSection = () => {
                         return (
                             <GradientCard
                                 key={index}
-                                width={card.width}
-                                height={card.height}
+                                // width={card.width}
+                                width="w-[300px] xs-sm:w-[300px] sm:w-[200px] sm-md:w-[150px] md:w-[220px] md:w-[220px] lg:w-[250px]"
+                                // height={card.height}
+                                height="h-[150px] xs:h-[250px] sm-md:h-[140px] md:h-[200px] lg:h-[210px]"
                                 text={card.text}
                                 count={card.count}
                                 Icon={card.Icon}
                                 textColor={textColor} // Dynamic color assignment
-                                contentAlignment="gap-5 shadow-md shadow-themeBlue/60"
+                                contentAlignment="gap-5 shadow-md shadow-themeBlue/60 dark:bg-gradient-to-r from-[#19274b] to-[#0c1237] dark:text-white items-center justify-center"
                             />
                         );
                     })}

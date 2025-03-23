@@ -19,15 +19,26 @@ import Footer from "./components/Footer";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register","/reset_password","/otp_validation","/forget_password","/register_successfull"].includes(location.pathname);
-
+  const isHome = location.pathname === "/home";
   return (
     <div className="flex flex-col min-h-screen">
     {!hideHeaderFooter && <Header />}
     
     {/* Main Content Wrapper with flex-grow to push the footer down */}
     <div className={`flex-grow ${hideHeaderFooter ? "" : "bg-white dark:bg-rootBgColor"}`}>
-      <div className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-xl-px xs:py-xs-py xss:mt-5 xs-sm:px-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py">
+      {/* <div 
+      className="px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-xl-px xs:py-xs-py xs-sm:py-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py"
+      > */}
+        <div
+      className={`${
+        isHome
+          ? ""
+          : "px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-xl-px 2xl:px-[350px] 3xl:px-[450px] 4xl:px-[600px] xs:py-xs-py xs-sm:py-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py"
+      }`}
+    >
       <Routes>
+      <Route path="/" element={<Home />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget_password" element={<Forgetpassword />} />

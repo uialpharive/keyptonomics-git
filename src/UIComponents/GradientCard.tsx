@@ -23,7 +23,7 @@ export default function GradientCard({
     <div className={`relative p-[1px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3] ${width} ${height}`}>
       <div className={`flex flex-col ${contentAlignment} bg-white rounded-xl h-full w-full p-6`}>
         <Icon size={32} className="text-[#01D3FF]" />
-        <p className="text-black text-md mt-2">{text}</p>
+        <p className="text-black dark:text-white text-md mt-2 ">{text}</p>
         <p className={`${textColor} text-3xl font-bold`}>{count}</p>
       </div>
     </div>
