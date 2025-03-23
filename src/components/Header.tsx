@@ -108,7 +108,7 @@ const Header = () => {
         <hr className="h-[1px]   border-0 xs:bg-white xs-sm:bg-gray-500 sm:bg-yellow-400 sm-md:bg-red-500" />
 
         <nav
-          className=" flex xs:hidden xs-sm:hidden sm:px-4 md:px:16 md-lg:px-5 lg:px-12 lg-xl:px-14 xl:px-16 items-center gap-10 p-1 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-800"
+          className=" flex hidden  md:flex  sm:px-4 md:px:16 md-lg:px-5 lg:px-12 lg-xl:px-14 xl:px-16 items-center gap-10 p-1 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-800"
           aria-label="Global"
         >
           <div className="flex gap-8">
