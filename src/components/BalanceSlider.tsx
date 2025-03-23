@@ -27,7 +27,7 @@ const BalanceSlider: React.FC<BalanceSliderProps> = ({ availableBalance }) => {
 
     return (
         <nav
-            className="flex xs:flex xs-sm:flex sm:hidden md:hidden lg:hidden lg-xl:hidden xl:hidden lg:px-14 items-center gap-10 px-6 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-100"
+            className="flex flex md:hidden lg:px-14 items-center gap-10 px-6 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-100"
             aria-label="Global"
         >
             <div className="h-[40px] overflow-hidden relative flex flex-col justify-center">
