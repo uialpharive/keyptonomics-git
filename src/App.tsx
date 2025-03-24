@@ -19,7 +19,9 @@ import Footer from "./components/Footer";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register","/reset_password","/otp_validation","/forget_password","/register_successfull"].includes(location.pathname);
-  const isHome = location.pathname === "/home";
+  // const isHome = location.pathname === "/home";
+  const isHome =
+  location.pathname === "/home" || location.pathname === "/" ||location.pathname ===""
   return (
     <div className="flex flex-col min-h-screen">
     {!hideHeaderFooter && <Header />}
