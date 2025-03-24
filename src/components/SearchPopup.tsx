@@ -1,31 +1,23 @@
+import { X } from "lucide-react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../redux/store";
-import { closeSearch, toggleSearch } from "../redux/slices/searchSlice";
-import { Search, X } from "lucide-react";
+import { closeSearch } from "../redux/slices/searchSlice";
+import { AppDispatch, RootState } from "../redux/store";
 import GradientButton from "../UIComponents/GradientButton";
+
 const SearchPopup: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
     const isOpen = useSelector((state: RootState) => state.search.isOpen);
 
     return (
         <>
-            {/* Open Button */}
-            <button
-                onClick={() => dispatch(toggleSearch())}
-                className="fixed bottom-5 right-5 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
-            >
-                <Search className="w-5 h-5" />
-            </button>
-
-            {/* Popup Overlay */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black/50 flex items-center justify-center"
+                    className="fixed inset-0 bg-black/80 flex items-start justify-center pt-20"
                     onClick={() => dispatch(closeSearch())} // Close popup when clicking outside
                 >
                     <div
-                        className="bg-gradient-to-r from-[#01D3FF]/70 to-[#2954A3]/70 p-6 rounded-lg shadow-lg w-96"
+                        className="bg-gradient-to-r from-[#01D3FF]/70 to-[#2954A3]/70 p-6 rounded-lg shadow-lg w-96 mt-0"
                         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the popup
                     >
                         <div className="flex justify-between items-center border-b pb-2">
@@ -44,7 +36,7 @@ const SearchPopup: React.FC = () => {
                                 className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             />
                             <GradientButton
-                                text="Register Now!"
+                                text="Search Now!"
                                 onClick={() => alert("Button Clicked")}
                                 paddingX="px-6"
                                 paddingY="py-[8px]"
@@ -52,8 +44,8 @@ const SearchPopup: React.FC = () => {
                                 fontSize="text-[14px]"
                                 fontWeight="font-medium"
                                 className="w-full shadow-[1px_3px_9px_#4fb2d1] shadow-themeBlue/80
-                                                                 hover:shadow-[0px_0px_2px_#4fb2d1,0px_0px_5px_#4fb2d1] 
-                                                                 will-change-transform transform-gpu"
+                                         hover:shadow-[0px_0px_2px_#4fb2d1,0px_0px_5px_#4fb2d1] 
+                                         will-change-transform transform-gpu"
                             />
                         </div>
                     </div>
@@ -64,4 +56,3 @@ const SearchPopup: React.FC = () => {
 };
 
 export default SearchPopup;
-
