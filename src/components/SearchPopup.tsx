@@ -1,8 +1,8 @@
+import { X } from "lucide-react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../redux/store";
-import { closeSearch, toggleSearch } from "../redux/slices/searchSlice";
-import { Search, X } from "lucide-react";
+import { closeSearch } from "../redux/slices/searchSlice";
+import { AppDispatch, RootState } from "../redux/store";
 import GradientButton from "../UIComponents/GradientButton";
 const SearchPopup: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -11,12 +11,12 @@ const SearchPopup: React.FC = () => {
     return (
         <>
             {/* Open Button */}
-            <button
+            {/* <button
                 onClick={() => dispatch(toggleSearch())}
                 className="fixed bottom-5 right-5 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition"
             >
                 <Search className="w-5 h-5" />
-            </button>
+            </button> */}
 
             {/* Popup Overlay */}
             {isOpen && (
