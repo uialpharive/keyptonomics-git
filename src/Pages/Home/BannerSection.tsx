@@ -6,7 +6,7 @@ const BannerSection = () => {
     <>
       <div className="w-full text-black dark:text-white flex flex-col sm:flex-row items-start justify-center">
         <div className="w-full lg:w-1/2 pt-10 md:pt-[50px] lg:pt-[70px] lg-xl:pt-[100px] xl:pt-[100px] items-center space-y-7">
-          <div className="lg:text-[48px] md:text-[35px] sm:text-[28px] text-[28px] font-bold font-gilroy">
+          <div className="lg:text-[48px] text-[35px] font-bold font-gilroy">
             Unlock earning potential: Maximize your returns with
             {/* <br /> */}
             <span className="text-themeBlue"> Crypto Staking!</span>

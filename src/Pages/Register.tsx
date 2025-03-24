@@ -52,7 +52,7 @@ const Register = () => {
 
   return (
     <div
-      className=" relative w-full h-full bg-cover bg-center"
+      className=" relative w-full  h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgimg})` }}
     >
       <ToastContainer/>
