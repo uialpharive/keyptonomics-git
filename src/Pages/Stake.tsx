@@ -1,31 +1,10 @@
-import React from "react";
-import { useState } from "react";
 import { Search, X } from "lucide-react";
-import GradientButton from "../UIComponents/GradientButton";
-import ada from "../assets/images/ada.svg";
-import atom from "../assets/images/atom.svg";
-import btc from "../assets/images/btc.svg";
-import bnb from "../assets/images/bnb.svg";
-import dash from "../assets/images/dash.svg";
-import doge from "../assets/images/doge.svg";
-import etc from "../assets/images/etc.svg";
-import eth from "../assets/images/eth.svg";
+import { useState } from "react";
 import bch from "../assets/images/bch.svg";
-import floki from "../assets/images/floki.svg";
-import icp from "../assets/images/icp.svg";
-import link from "../assets/images/link.svg";
-import itc from "../assets/images/itc.svg";
-import matic from "../assets/images/matic.svg";
-import neo from "../assets/images/neo.svg";
-import pepe from "../assets/images/pepe.svg";
-import usdt from "../assets/images/usdt.svg";
-import vet from "../assets/images/vet.svg";
-import xlm from "../assets/images/xlm.svg";
-import xmr from "../assets/images/xmr.svg";
-import xrp from "../assets/images/xrp.svg";
-import yfi from "../assets/images/yfi.svg";
-import InputField from "../UIComponents/GrayInputButton";
-import ThemeToggle from "../components/ThemeToggle";
+import bnb from "../assets/images/bnb.svg";
+import btc from "../assets/images/btc.svg";
+import eth from "../assets/images/eth.svg";
+import GradientButton from "../UIComponents/GradientButton";
 import WhiteBtn from "../UIComponents/WhiteBtn";
 
 interface StakeCardProps {
@@ -212,7 +191,7 @@ const Stake = () => {
   return (
     <>
       <div
-        className="max-w-7xl mx-auto mt-10 p-4 rounded-lg border-2"
+        className="max-w-7xl mx-auto p-4 rounded-lg border-2"
         style={{
           background:
             "linear-gradient(105.95deg, rgba(102, 177, 230, 0.2) 24.79%, rgba(41, 84, 163, 0.2) 71.87%)",

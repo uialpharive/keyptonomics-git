@@ -10,7 +10,7 @@ interface GradientButtonProps {
   fontSize?: string; // Font size
 }
 
-export default function whiteBtn({
+export default function WhiteBtn({
   text,
   onClick,
   className = "",
@@ -24,7 +24,7 @@ export default function whiteBtn({
   onClick={onClick}
   className="relative p-[1.6px] rounded-lg bg-gradient-to-r from-[#01D3FF] to-[#2954A3] transition-all duration-300 ease-in-out"
 >
-  <span className="block w-full h-full px-6 py-2 rounded-md bg-white text-black font-bold text-center transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white">
+  <span className="block w-full h-full px-6 py-2 rounded-md bg-white dark:bg-black dark:text-white text-black font-bold text-center transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white">
     {text}
   </span>
 </button>

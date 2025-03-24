@@ -5,31 +5,25 @@
 /* body {
   font-family: "Gilroy", sans-serif;
 } */
-@font-face {
+/* @font-face {
   font-family: "Gilroy";
   src: url("/src/assets/fonts/Gilroy-SemiBold.woff2") format("woff2"),
        url("/src/assets/fonts/Gilroy-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
-}
+} */
 
 body {
   /* font-family: "Gilroy", sans-serif; */
-  font-family: 'Poppins' !important;
+  font-family: 'Poppins', sans-serif !important;
   /* font-weight: 600; */
 }
-@font-face {
+/* @font-face {
   font-family: "GT Walsheim Trial";
   src: url("/src/assets/fonts/GTWalsheimTrial-Regular.woff2") format("woff2"),
        url("/src/assets/fonts/GTWalsheimTrial-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
-@font-face {
-  font-family: "GT Walsheim Trial";
-  src: url("/src/assets/fonts/GTWalsheimTrial-Bold.woff2") format("woff2"),
-       url("/src/assets/fonts/GTWalsheimTrial-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
+
