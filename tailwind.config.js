@@ -42,6 +42,7 @@ export default {
             },
             screens: {
                 xs: { max: '480px' }, // Applies to screens BELOW 480px
+                'xTs': { min: '480px', max:'640px' }, // Applies to screens BELOW 480px
                 // 'xs-sm': { max: '640px' },
                 // 'sm-md': { max: '900px' },
                 // 'md-lg': '1000px',

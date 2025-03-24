@@ -16,6 +16,12 @@ import Resetpassword from "./Pages/Auth/Resetpassword";
 import Otpvalidation from "./Pages/Auth/Otpvalidation";
 import Success from "./Pages/Auth/Success";
 import Footer from "./components/Footer";
+import Forex from "./Pages/Forex";
+import Crypto from "./Pages/Crypto";
+import Platform from "./Pages/Platform";
+import Commodities from "./Pages/Commodities";
+import Indices from "./Pages/Indices";
+import Stock from "./Pages/Stock";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register","/reset_password","/otp_validation","/forget_password","/register_successfull"].includes(location.pathname);
@@ -47,6 +53,12 @@ const Layout = () => {
         <Route path="/register_successfull" element={<Success />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/forex" element={<Forex />} />
+        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/platform" element={<Platform />} />
+        <Route path="/commodities" element={<Commodities />} />
+        <Route path="/indices" element={<Indices />} />
+        <Route path="/stock" element={<Stock />} />
         <Route path="/stake" element={<Stake/>} />
         <Route path="/deposit" element={<Deposit/>} />
         <Route path="/withdraw" element={<Withdraw/>} />
