@@ -16,6 +16,12 @@ import Resetpassword from "./Pages/Auth/Resetpassword";
 import Otpvalidation from "./Pages/Auth/Otpvalidation";
 import Success from "./Pages/Auth/Success";
 import Footer from "./components/Footer";
+import Forex from "./Pages/Forex";
+import Crypto from "./Pages/Crypto";
+import Platform from "./Pages/Platform";
+import Commodities from "./Pages/Commodities";
+import Indices from "./Pages/Indices";
+import Stock from "./Pages/Stock";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import SearchPopup from "./components/SearchPopup";
@@ -53,19 +59,25 @@ const Layout = () => {
               <Route path="/" element={<Home />} />
 
               <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/forget_password" element={<Forgetpassword />} />
-              <Route path="/otp_validation" element={<Otpvalidation />} />
-              <Route path="/reset_password" element={<Resetpassword />} />
-              <Route path="/register_successfull" element={<Success />} />
-              <Route path="/wallet" element={<Wallet />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/stake" element={<Stake />} />
-              <Route path="/deposit" element={<Deposit />} />
-              <Route path="/withdraw" element={<Withdraw />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/notification" element={<Notification />} />
-              <Route path="/support" element={<Support />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forget_password" element={<Forgetpassword />} />
+        <Route path="/otp_validation" element={<Otpvalidation />} />
+        <Route path="/reset_password" element={<Resetpassword />} />
+        <Route path="/register_successfull" element={<Success />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/forex" element={<Forex />} />
+        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/platform" element={<Platform />} />
+        <Route path="/commodities" element={<Commodities />} />
+        <Route path="/indices" element={<Indices />} />
+        <Route path="/stock" element={<Stock />} />
+        <Route path="/stake" element={<Stake/>} />
+        <Route path="/deposit" element={<Deposit/>} />
+        <Route path="/withdraw" element={<Withdraw/>} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/notification" element={<Notification/>} />
+        <Route path="/support" element={<Support/>} />
             </Routes>
           </div>
         </div>
