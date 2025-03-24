@@ -49,7 +49,7 @@ const Wallet = () => {
   return (
     
     <div>
-        <div className="">
+        <div className="bg-white">
       <div
         className="p-8 rounded-xl"
         style={{

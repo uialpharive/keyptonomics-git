@@ -1,6 +1,5 @@
 import LightBlueButton from "../../UIComponents/LightBlueButton";
 import WhiteBtn from "../../UIComponents/WhiteBtn";
-import img from "../../../public/home/Illustration.png";
 
 const EarnStakeSection = () => {
   return (
@@ -8,11 +7,11 @@ const EarnStakeSection = () => {
       <div className="space-y-5 xs:pt-10">
         <div className="text-[28px] md:text-[38px] font-medium dark:text-white xs:px-5 ">
           See what you can <br />
-          <span className="text-themeBlue">Earn Staking</span>
+          <span className="text-themeBlue">Earn Staking</span>
         </div>
 
         {/* <div className="bg-[#edf0f2] dark:bg-stakeCard dark:bg-opacity-0 shadow-lg rounded-md p-5 space-y-5"> */}
-        <div className="bg-[#edf0f2]/50 dark:bg-stakeCard/50 shadow-lg rounded-md p-5 space-y-5">
+        <div className="bg-[#edf0f2]/50 dark:bg-stakeCard/50 shadow-lg rounded-xl p-5 space-y-5">
 
           <div className="w-full flex">
             <div className="w-1/2 px-2">
