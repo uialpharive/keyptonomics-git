@@ -1,7 +1,7 @@
-import GradientButton from "../../UIComponents/GradientButton";
 import lady from "../../../public/home/Adobe Express - file (17) 1.png";
 import diamond from "../../../public/home/daiamond.png";
 import bgImage from "../../../public/home/ladyCircle.png";
+import GradientButton from "../../UIComponents/GradientButton";
 
 const WorkSection = () => {
   return (
@@ -37,17 +37,17 @@ const WorkSection = () => {
             How Keyptonomics works
           </div>
           <div className="text-[15px] dark:text-white">
-            Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+            Stake Your Cryptocurrency:Choose a cryptocurrency that supports
             staking, acquire it, and transfer it to a compatible staking
             platform or wallet.
           </div>
           <div className="text-[15px] dark:text-white">
-            Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+            Stake Your Cryptocurrency:Choose a cryptocurrency that supports
             staking, acquire it, and transfer it to a compatible staking
             platform or wallet.
           </div>
           <div className="text-[15px] dark:text-white">
-            Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+            Stake Your Cryptocurrency:Choose a cryptocurrency that supports
             staking, acquire it, and transfer it to a compatible staking
             platform or wallet.
           </div>

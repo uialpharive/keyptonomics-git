@@ -5,6 +5,7 @@ import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { MdError } from "react-icons/md";
+import ThemeToggle from "../../components/ThemeToggle";
 const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -44,7 +45,7 @@ const Login = () => {
       style={{ backgroundImage: `url(${bgimg})` }}
     >
       <ToastContainer />
-      <div className="absolute inset-0 bg-[#1E2637]/30 backdrop-blur-md z-0"></div>
+      <div className="absolute inset-0 bg-white/70 dark:bg-[#1E2637]/30 backdrop-blur-sm z-0"></div>
       {/* Centered Logo and Text */}
       <div className="flex justify-center items-center relative z-10">
         <div className="flex xs:mt-[50px] md:mt-[75px] mt-[100px] xs:mb-[25px] mb-[50px]">
@@ -52,6 +53,9 @@ const Login = () => {
           <p className="text-white mt-2 ml-2 text-lg font-semibold">
             KEYPTONOMICS
           </p>
+          <div className="hidden">
+          <ThemeToggle/>
+          </div>
         </div>
       </div>
 

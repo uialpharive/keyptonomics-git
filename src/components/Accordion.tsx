@@ -1,3 +1,4 @@
+import {  Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 const Accordion = () => {
@@ -30,7 +31,7 @@ const Accordion = () => {
           >
             <span className="text-lg font-medium">{item.title}</span>
             <span className="text-xl">
-              {openIndex === index ? "▲" : "▼"}
+              {openIndex === index ? <Minus/> : <Plus/>}
             </span>
           </button>
           {openIndex === index && (
