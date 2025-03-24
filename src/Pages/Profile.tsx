@@ -3,6 +3,7 @@ import AvailableBalance from '../components/AvailableBalance'
 import { BiRightArrow } from "react-icons/bi";
 import { LeftArrow, LeftArrowline, RightArrow, RightArrowline } from "../components/SvgCollection";
 import ProfileEdit from "../components/ProfileEdit";
+import GradientButton from "../UIComponents/GradientButton";
 
 const loginData = [
     { date: "2025-03-10 18:32", browser: "Chrome133.0.0.0", status: "Success" },
@@ -117,12 +118,13 @@ const Profile: React.FC = () => {
           </div>
         </div>
 
-        <button
+        {/* <button
           onClick={() => setIsModalOpen(true)}
           className="px-4 py-2 bg-blue-500 text-white rounded"
         >
           Edit Profile
-        </button>
+        </button> */}
+        <GradientButton text="Edit Profile"   onClick={() => setIsModalOpen(true)} />
       </div>
 
       {/* Profile Modal */}
