@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import bgimg from "../../assets/images/bgimage.jfif";
+import forget from "../../assets/images/1.webp";
 import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import { MdError } from "react-icons/md";
@@ -48,7 +49,7 @@ const ForgetPassword: React.FC = () => {
           <div className="border-[3px] p-2 xs:p-0 rounded-lg shadow-lg bg-gradient-to-r from-blue-300/40 to-blue-700/20 grid grid-cols-1 md:grid-cols-2 gap-8 sm:w-3/4 max-w-[812px] w-full border-transparent md:border-[#00cdf9]">
             {/* Left Image Section (Hidden on Small Screens) */}
             <div className="hidden md:flex justify-center items-center">
-              <img src={logo} alt="Illustration" className="h-40" />
+              <img src={forget} alt="Illustration" className=" w-[320px] " />
             </div>
 
             {/* Forgot Password Form */}

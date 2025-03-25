@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import bgimg from "../../assets/images/bgimage.jfif";
 import logo from "../../assets/images/logo.png";
+import reset from "../../assets/images/reset.png";
 import { ToastContainer, toast } from "react-toastify";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +41,7 @@ const ChangePassword = () => {
         <div className="border-[3px] md:border-[3px] lg:border-[3px] rounded-lg shadow-lg xs:bg-none bg-gradient-to-r from-blue-300/40 to-blue-700/20 grid grid-cols-1 md:grid-cols-2 gap-8 sm:w-3/4 max-w-[812px] md:w-[700px] w-[812px] border-transparent md:border-[#00cdf9]">
           {/* Left Side (Hidden on Mobile) */}
           <div className="hidden md:flex justify-center items-center">
-            <img src={logo} alt="Astronaut" className="h-40" />
+            <img src={reset} alt="Astronaut" className="h-[] w-[300px]" />
           </div>
 
           {/* Right Side - Form */}
