@@ -7,12 +7,14 @@ import CardSection from "./CardSection";
 import EarnStakeSection from "./EarnStakeSection";
 import WorkSection from "./WorkSection";
 import { useEffect } from "react";
-import { setCookie } from "../../lib/cookies";
+import { removeCookie, setCookie } from "../../lib/cookies";
 
 const Home = () => {
     useEffect(()=>{
-        setCookie('loggedIn', true)
-        setCookie('userToken', "token")
+        // setCookie('loggedIn', true)
+        // setCookie('userToken', "token")
+        removeCookie("userToken")
+        removeCookie("loggedIn")
     },[])
     return (
         <>

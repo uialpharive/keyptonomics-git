@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import bgimg from "../assets/images/bgimage.jfif";
 import logo from "../assets/images/logo.png";
+import register from "../assets/images/register.png";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { MdError } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Register = () => {
   const [password, setPassword] = useState("");
@@ -52,26 +54,29 @@ const Register = () => {
 
   return (
     <div
-      className=" relative w-full  h-screen bg-cover bg-center"
+      className=" relative w-full min-h-screen bg-cover bg-center"
       style={{ backgroundImage: `url(${bgimg})` }}
     >
       <ToastContainer/>
-      <div className="absolute inset-0 bg-[#1E2637]/30 backdrop-blur-md z-0"></div>
+      <div className="absolute inset-0 bg-white/70 dark:bg-[#1E2637]/30 backdrop-blur-sm z-0"></div>
       {/* Centered Logo and Text */}
       <div className="flex justify-center items-center relative z-10">
         <div className="flex xs:mt-[50px] md:mt-[75px] mt-[100px] xs:mb-[25px] mb-[50px]">
-          <img src={logo} alt="Logo" className="h-10" />
+          <img src={logo} alt="Logo" className="h-10 overflow-scroll" />
           <p className="text-white mt-2 ml-2 text-lg font-semibold">
             KEYPTONOMICS
           </p>
+          <div className="">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
-
+     
       {/* Login Card at the Bottom */}
       <div className="flex justify-center items-end pb-10 relative z-10">
         <div className=" border-[3px]  md:border-[3px] lg:border-[3px] rounded-lg shadow-lg xs:bg-none  bg-gradient-to-r from-blue-300/40 to-blue-700/20 grid grid-cols-1 md:grid-cols-2 gap-8 sm:w-[975px]   max-w-[975px]   w-[500px] border-transparent md:border-[#00cdf9]">
           <div className="hidden  md:flex lg:flex justify-center items-center">
-            <img src={logo} alt="Astronaut" className="h-40" />
+            <img src={register} alt="Astronaut" className="h-[430px] w-[550px] ml-7 object-contain" />
           </div>
 
           {/* Login Form */}
