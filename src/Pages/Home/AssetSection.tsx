@@ -1,5 +1,3 @@
-import rocket from "../../../public/Group 3438.png";
-import GradientButton from "../../UIComponents/GradientButton";
 import spaceman from "../../../public/home/spaceman.png";
 import galaxcy from "../../../public/home/spaceman_galaxcy.png";
 
@@ -14,7 +12,7 @@ const AssetSection = () => {
           <div className="text-[15px] space-y-4">
             <div className="text-themeBlue">Passive Income with Staking</div>
             <div className="text-[12px]">
-              Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+              Stake Your Cryptocurrency:Choose a cryptocurrency that supports
               staking, acquire it, and transfer it to a compatible staking
               platform or wallet.
             </div>
@@ -22,7 +20,7 @@ const AssetSection = () => {
           <div className="text-[15px] space-y-4">
             <div className="text-themeBlue">Passive Income with Staking</div>
             <div className="text-[12px]">
-              Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+              Stake Your Cryptocurrency:Choose a cryptocurrency that supports
               staking, acquire it, and transfer it to a compatible staking
               platform or wallet.
             </div>
@@ -30,7 +28,7 @@ const AssetSection = () => {
           <div className="text-[15px] space-y-4">
             <div className="text-themeBlue">Passive Income with Staking</div>
             <div className="text-[12px]">
-              Stake Your Cryptocurrency: Choose a cryptocurrency that supports
+              Stake Your Cryptocurrency:Choose a cryptocurrency that supports
               staking, acquire it, and transfer it to a compatible staking
               platform or wallet.
             </div>

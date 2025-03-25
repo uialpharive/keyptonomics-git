@@ -1,10 +1,30 @@
+import { Link } from "react-router-dom";
 import { MediumFooterBall, SmallFooterBall } from "../SVGComponents";
 import CrystalSemiCircles from "./CrystalSemiCircles";
 
+const instruments = [
+    { name: "Crypto", path: "/crypto" },
+    { name: "Forex", path: "/forex" },
+    { name: "Stocks", path: "/stocks" },
+    { name: "Indices", path: "/indices" },
+    { name: "Commodities", path: "/commodities" },
+];
+const tradingLinks = [
+    { name: "Platform", path: "/platform" },
+    { name: "Deposit", path: "/deposit" },
+    { name: "Open Account", path: "/open-account" },
+    { name: "Sign In", path: "/sign-in" },
+];
+const platforms = [
+    { name: "MT5 Platform", path: "/mt5-platform" },
+    { name: "Webtrader Platform", path: "/webtrader-platform" },
+    { name: "Mobile Platform", path: "/mobile-platform" },
+];
 export default function Footer() {
+
     return (
         <footer className="bg-footerColor dark:bg-black relative">
-            <div className="pt-10 space-y-3 xs:px-5 xs-sm:mx-5 sm:mx-5  md:mx-10 md-lg:mx-16 xs:block xs-sm:hidden sm:block md:block lg:hidden xl:hidden">
+            <div className="pt-10 space-y-3 xs:px-5 sm:px-5  md:mx-5 md-lg:mx-16 hidden xs:block sm:block lg:hidden xl:hidden">
                 <div className="flex items-center space-x-2">
                     <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-md"></div>
                     <h2 className="text-lg font-semibold dark:text-themeBlue">KEYPTONOMICS</h2>
@@ -48,7 +68,7 @@ export default function Footer() {
                     </div>
 
                     {/* Instruments */}
-                    <div>
+                    {/* <div>
                         <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Instruments</h3>
                         <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
                             <li>Crypto</li>
@@ -57,10 +77,24 @@ export default function Footer() {
                             <li>Indices</li>
                             <li>Commodities</li>
                         </ul>
-                    </div>
-
-                    {/* Trading */}
+                    </div> */}
                     <div>
+                        <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Instruments</h3>
+                        <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
+                            {instruments.map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        to={item.path}
+                                        className="cursor-pointer hover:text-gray-900 dark:hover:text-themeWhite transition cursor-pointer"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Trading */}
+                    {/* <div>
                         <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Trading</h3>
                         <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
                             <li>Platform</li>
@@ -68,10 +102,24 @@ export default function Footer() {
                             <li>Open Account</li>
                             <li>Sign In</li>
                         </ul>
+                    </div> */}
+                    <div>
+                        <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Trading</h3>
+                        <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
+                            {tradingLinks.map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        to={item.path}
+                                        className="cursor-pointer hover:text-gray-900 dark:hover:text-themeWhite transition cursor-pointer"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-
                     {/* Platforms & Payments */}
-                    <div className="space-y-6">
+                    {/* <div className="space-y-6">
                         <div>
                             <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Instruments</h3>
                             <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
@@ -81,11 +129,35 @@ export default function Footer() {
                             </ul>
                         </div>
 
+                    </div> */}
+                    <div className="space-y-6">
+                        <div>
+                            <h3 className="font-semibold text-gray-800 dark:text-themeBlue">Instruments</h3>
+                            <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
+                                {platforms.map((item) => (
+                                    <li key={item.name}>
+                                        <Link
+                                            to={item.path}
+                                            className="cursor-pointer hover:text-gray-900 dark:hover:text-themeWhite transition"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                     <div className="space-y-6">
                         <h3 className="font-semibold text-gray-800 dark:text-themeBlue">FX Payments</h3>
                         <ul className="mt-3 space-y-2 text-gray-600 text-sm dark:text-themeBlue">
-                            <li>Account Types</li>
+                            <li>
+                                <Link
+                                    to="/account-types"
+                                    className="cursor-pointer hover:text-gray-900 dark:hover:text-themeWhite transition"
+                                >
+                                    Account Types
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

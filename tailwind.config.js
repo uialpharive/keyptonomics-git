@@ -39,17 +39,27 @@ export default {
                 stakeCard: "#2F2F8A99",
                 inputDark: "#60608d",
                 tableBg:"#C2C2C24D",
+                inputLight: "#ebebeb",
 
             },
             screens: {
                 xs: { max: '480px' }, // Applies to screens BELOW 480px
+                'xTs': { min: '480px', max:'640px' }, // Applies to screens BELOW 480px
                 // 'xs-sm': { max: '640px' },
                 // 'sm-md': { max: '900px' },
                 // 'md-lg': '1000px',
                 // 'lg-xl': '1200px',
                 '2xl':'1800px',
-                '3xl':'2300px',
-                '4xl': '2800px'
+                '3xl':'2000px',
+                '4xl': '2300px',
+                '5xl': '2600px',
+                '6xl': '2900px',
+                '7xl': '3200px',
+                '8xl': '3500px',
+                '9xl': '4000px',
+                '10xl': '4500px',
+                '11xl': '5000px',
+                '12xl': '6000px'
             },
            
             spacing: {
