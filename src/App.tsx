@@ -33,6 +33,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./Pages/404/NotFound";
 import ProtectedRouter from "./routes/ProtectedRouter";
 import ProtectedRouterLogin from "./routes/ProtectedRouterLogin";
+import Trade from "./Pages/Trade";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register", "/reset_password", "/otp_validation", "/forget_password", "/register_successfull"].includes(location.pathname);
@@ -88,6 +89,7 @@ const Layout = () => {
               <Route path="/support" element={<Support />} />
               <Route path="/transaction" element={<Transaction/>} />
               <Route path="/hedge-fund" element={<HedgeFund/>} />
+              <Route path="/trade" element={<Trade/>}/>
               <Route path="/account-type" element={<AccountType/>} />
               <Route path="/live-events" element={<LiveEvents/>} />
               </Route>
