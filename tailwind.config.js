@@ -38,7 +38,10 @@ export default {
                 inputBg:'#FFFFFF33',
                 stakeCard: "#2F2F8A99",
                 inputDark: "#60608d",
+                tableBg:"#C2C2C24D",
                 inputLight: "#ebebeb",
+                darkText: "#0C7BEA",
+                cardHover:"#b6ccf37d",
 
             },
             screens: {
@@ -109,6 +112,15 @@ export default {
             //     xl: { min: "1601px" }, // xl applies above 1601px
             //   },
         },
+        keyframes: {
+            scroll: {
+              "0%": { transform: "translateX(0px)" },
+              "100%": { transform: "translateX(-100%)" }, 
+            },
+          },
+          animation: {
+            scroll: "scroll 30s linear infinite", 
+          },    
     },
     plugins: [],
 };
