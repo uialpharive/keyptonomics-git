@@ -1,9 +1,9 @@
-import { History, Home, Menu, Settings, User, User2Icon, X } from "lucide-react";
+import { Facebook, History, Home, Instagram, Linkedin, Menu, Settings, Twitter, User, User2Icon, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { GrTransaction } from "react-icons/gr";
 import { IoIosNotifications } from "react-icons/io";
 import { MdEventSeat } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Flag, LogoDark, LogoLight } from "../SVGComponents";
 import HeaderBtn from "../UIComponents/HeaderBtn";
 import IconCard from "../UIComponents/IconCard";
@@ -30,6 +30,7 @@ const availableBalance = [
     { id: 3, text: "Available Balance", value: "$ 1,339.79" },
 ];
 const Header = () => {
+    const location = useLocation();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const drawerRef = useRef<any>(null);
     // Toggle Drawer
@@ -146,7 +147,7 @@ const Header = () => {
                 <hr className="h-[1px]   border-0 xs:bg-white xs-sm:bg-gray-500 sm:bg-yellow-400 md:bg-red-500 lg:bg-green-500" />
 
                 <nav
-                    className=" flex hidden  md:flex  sm:px-4 md:px:16 md-lg:px-5 lg:px-12 lg-xl:px-14 xl:px-16 items-center gap-10 p-1 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-800"
+                    className=" flex hidden lg:block  sm:px-4 md:px:16 md-lg:px-5 lg:px-12 lg-xl:px-14 xl:px-16 items-center gap-10 p-1 bg-gray-100 dark:bg-[#262d4d] border-b border-gray-200 dark:border-gray-800"
                     aria-label="Global"
                 >
                     <div className="flex gap-8">
@@ -166,9 +167,15 @@ const Header = () => {
                     </div>
                 </nav>
                 {/* Side Drawer */}
-                <div
+                {/* <div
                     className={`block lg:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
                         } transition-transform duration-300 ease-in-out z-50`}
+                    ref={drawerRef}
+                > */}
+                <div
+                    className={`block lg:hidden fixed top-0 right-0 h-full  ${isDrawerOpen ? "w-full sm:w-[70%]" : "w-64"}  bg-white dark:bg-gray-800 shadow-lg transform 
+    ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}
+    transition-transform duration-300 ease-in-out z-50`}
                     ref={drawerRef}
                 >
                     <hr className="h-[3px] bg-themeBlue  border-0" />
@@ -182,12 +189,12 @@ const Header = () => {
                     </div>
 
                     {/* Menu Items */}
-                    <div className=" flex flex-col  gap-5 px-1">
-                        <div className="flex flex-col gap-1 p-4">
+                    <div className=" flex flex-col  gap-5 pt-5">
+                        <div className={`flex ${isDrawerOpen?"flex-col md:flex-row ":"hidden"} items-center justify-center bg-gray-100 dark:bg-inputBg shadow-xl rounded-md  px-5 `}>
                             {availableBalance.map((item, index) => (
-                                <div className="flex gap-4 items-center dark:bg-inputBg shadow-xl rounded-lg p-4" key={index}>
+                                <div className="flex gap-4 items-center  p-4" key={index}>
                                     <div className="flex flex-col justify-end">
-                                        <h1 className="text-[12px] font-lato font-medium dark:text-white">
+                                        <h1 className="text-[14px] font-lato font-bold dark:text-white">
                                             {item.text}
                                         </h1>
                                     </div>
@@ -198,33 +205,48 @@ const Header = () => {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex flex-col gap-5">
+                        <hr className="h-[1px] border-0 bg-gray-200 dark:bg-gray-700" />
+
+                        <div className="flex flex-col gap-3 px-5">
                             {menus.map((item) => (
                                 <Link
                                     key={item.name}
                                     to={item.path}
-                                    className="flex items-center gap-3 font-lato font-bold text-gray-700 py-2 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 px-3 rounded cursor-pointer"
+                                    className={`flex items-center gap-3 text-[12px] font-bold py-2 px-3 rounded cursor-pointer
+            ${location.pathname === item.path
+                                            ? "bg-themeBlue dark:bg-themeBlue text-white dark:text-white"
+                                            : "text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"}`}
                                 >
-                                    <item.icon className="w-5 h-5 text-gray-500 dark:text-gray-300" />
+                                    <item.icon className={` ${location.pathname === item.path ? "" : "w-5 h-5 text-black dark:text-gray-300"}`} />
                                     {item.name}
                                 </Link>
                             ))}
-                            <div className="flex items-center gap-3 px-3">
+
+                            <div className={`flex items-center gap-3 px-3 rounded ${location.pathname === "/profile" ? "bg-gray-200 dark:bg-gray-800" : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                                }`}>
                                 <User2Icon className="w-5 h-5 text-gray-500 dark:text-gray-300" />
-
-                                <Link to="/profile" className="py-2 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Profile</Link>
+                                <Link to="/profile" className="text-[11px] font-bold py-2 text-gray-700 dark:text-white">Profile</Link>
                             </div>
-                            <div className="flex items-center gap-3 px-3">
-                                <Settings className="w-5 h-5 text-gray-500 dark:text-gray-300" />
 
-                                <Link to="/settings" className="py-2 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Settings</Link>
+                            <div className={`flex items-center gap-3 px-3 rounded ${location.pathname === "/settings" ? "bg-gray-200 dark:bg-gray-800" : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                                }`}>
+                                <Settings className="w-5 h-5 text-gray-500 dark:text-gray-300" />
+                                <Link to="/settings" className="text-[11px] font-bold py-2 text-gray-700 dark:text-white">Settings</Link>
                             </div>
                         </div>
+                        <div className="px-5">
+                            <button className="py-2 w-full bg-gray-300 dark:bg-inputBg text-white dark:text-white hover:bg-gray-400  dark:hover:bg-gray-700 px-3 rounded">Logout</button>
+                        </div>
+                    </div>
+                    <div className="flex flex-row justify-center items-center gap-5 pt-5">
+                        <Twitter className="text-gray-400 dark:text-white" />
+                        <Facebook className="text-gray-400 dark:text-white" />
+                        <Instagram className="text-gray-400 dark:text-white" />
+                        <Linkedin className="text-gray-400 dark:text-white" />
 
-                        <button className="py-2 text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 rounded">Logout</button>
                     </div>
                 </div>
-                <BalanceSlider availableBalance={availableBalance} />
+                {/* <BalanceSlider availableBalance={availableBalance} /> */}
                 {/* <ResponsiveColorBoxes /> */}
                 {/* Background overlay when menu is open */}
                 {isDrawerOpen && (

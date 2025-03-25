@@ -6,8 +6,14 @@ import BannerSection from "./BannerSection";
 import CardSection from "./CardSection";
 import EarnStakeSection from "./EarnStakeSection";
 import WorkSection from "./WorkSection";
+import { useEffect } from "react";
+import { setCookie } from "../../lib/cookies";
 
 const Home = () => {
+    useEffect(()=>{
+        setCookie('loggedIn', true)
+        setCookie('userToken', "token")
+    },[])
     return (
         <>
             {/* <div className="sm:pt-14 pb-10 px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-[150px] 2xl:px-[250px] 3xl:px-[350px] 4xl:px-[550px] 5xl:px-[800px] 6xl:px-[950px] 7xl:px-[1000px] 8xl:px-[1050px]">

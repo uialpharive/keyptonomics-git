@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^4.4.8",
-    "chartjs-plugin-datalabels": "^2.2.0",
     "@animxyz/core": "^0.6.6",
     "@reduxjs/toolkit": "^2.6.1",
+    "chart.js": "^4.4.8",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "framer-motion": "^12.5.0",
     "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.1",
