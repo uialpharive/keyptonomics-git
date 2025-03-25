@@ -24,7 +24,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-footerColor dark:bg-black relative">
-            <div className="pt-10 space-y-3 xs:px-5 xs-sm:mx-5 sm:mx-5  md:mx-10 md-lg:mx-16 xs:block xs-sm:hidden sm:block md:block lg:hidden xl:hidden">
+            <div className="pt-10 space-y-3 xs:px-5 sm:px-5  md:mx-5 md-lg:mx-16 hidden xs:block sm:block lg:hidden xl:hidden">
                 <div className="flex items-center space-x-2">
                     <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-md"></div>
                     <h2 className="text-lg font-semibold dark:text-themeBlue">KEYPTONOMICS</h2>
