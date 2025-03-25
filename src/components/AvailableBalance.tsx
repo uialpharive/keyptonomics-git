@@ -12,29 +12,29 @@ const AvailableBalance = () => {
       border: "1px solid #2954A3",
     }}
   >
-        <div className='xs:mb-3'>
-        <p className="text-3xl font-semibold text-black">
+        <div className='xs:mb-3 '>
+        <p className="text-[22px] font-semibold text-black dark:text-titleGray">
          Available Balance :
         </p>
-        <p className="text-xl font-bold text-black">$ 1,339.79</p>
+        <p className="text-xl text-[22px] font-extrabold text-black dark:text-titleGray">$ 1,339.79</p>
         </div>
         <div className='xs:mb-3'>
-        <p className="text-3xl font-semibold text-black">
+        <p className="text-3xl text-[22px] font-semibold text-black dark:text-titleGray">
          Staked Balance :
         </p>
-        <p className="text-xl font-bold text-black">$ 0.00</p>
+        <p className="text-xl text-[22px] font-extrabold text-black dark:text-titleGray">$ 0.00</p>
         </div>
-        <div className='xs:mb-3'>
-        <p className="text-3xl font-semibold text-black">
+        <div className='xs:mb-3 '>
+        <p className="text-3xl text-[22px] font-semibold text-black dark:text-titleGray">
          Account Balance :
         </p>
-        <p className="text-xl font-bold text-black">$ 1,339.79</p>
+        <p className="text-xl text-[22px] font-extrabold text-black dark:text-titleGray">$ 1,339.79</p>
         </div>
         <div className='xs:mb-3'>
-        <p className="text-3xl font-semibold text-black">
+        <p className="text-3xl text-[22px] font-semibold text-black dark:text-titleGray">
          Total P&L :
         </p>
-        <p className="text-xl font-bold text-black">$ 339.93</p>
+        <p className="text-xl text-[22px] font-extrabold text-black dark:text-titleGray">$ 339.93</p>
         </div>
         </div>
   )

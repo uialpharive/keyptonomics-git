@@ -122,10 +122,10 @@ const Profile: React.FC = () => {
               <div className="w-16 h-16 bg-gray-200 rounded-md mr-3"></div>
             )}
             <div>
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-semibold text-black dark:text-white">
                 {profileData.firstName} {profileData.lastName}
               </h2>
-              <p className="text-gray-500">
+              <p className="text-gray-500 font-normal">
                 KYC {profileData.phone ? "Verified" : "Unverified"}
               </p>
             </div>
@@ -146,7 +146,7 @@ const Profile: React.FC = () => {
             />
             <WhiteBtn
               text="Change Password"
-              className="px-10 py-2 mt-2"
+              className=" mt-2"
               onClick={() => setPasswordModalOpen(true)}
             />
           </div>
@@ -171,7 +171,7 @@ const Profile: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse">
             <thead>
-              <tr className="text-left">
+              <tr className="text-left text-black dark:text-white">
                 <th className="p-3">Date</th>
                 <th className="p-3">Browser</th>
                 <th className="p-3">Status</th>
@@ -183,8 +183,8 @@ const Profile: React.FC = () => {
                   key={index}
                   className={`relative ${
                     index % 2 === 0
-                      ? "bg-white rounded-lg border-transparent"
-                      : "bg-transparent"
+                      ? "bg-white dark:bg-[#0d142b] text-black dark:text-titleGray  rounded-lg border-transparent"
+                      : "bg-transparent text-black dark:text-titleGray"
                   }`}
                 >
                   <td
@@ -207,14 +207,14 @@ const Profile: React.FC = () => {
             </tbody>
           </table>
         </div>
-        <div className="flex items-center justify-end gap-2 mt-4 text-gray-700">
+        <div className="flex items-center justify-end gap-2 mt-4 text-black dark:text-titleGray">
           <div>Rows per page {rowsPerPage}</div>
           <div>
             {currentPage * rowsPerPage - rowsPerPage + 1}-
             {Math.min(currentPage * rowsPerPage, loginData.length)} of{" "}
             {loginData.length}
           </div>
-          <div className="flex gap-1">
+          <div className="flex gap-1 ">
             <button
               className=" py-1"
               onClick={() => setCurrentPage(1)}
@@ -223,14 +223,14 @@ const Profile: React.FC = () => {
               <LeftArrowline />
             </button>
             <button
-              className=" py-1"
+              className=" py-1 text-black dark:text-titleGray"
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
             >
               <LeftArrow />
             </button>
             <button
-              className=" py-1"
+              className=" py-1 text-black dark:text-titleGray"
               onClick={() =>
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
@@ -239,7 +239,7 @@ const Profile: React.FC = () => {
               <RightArrow />
             </button>
             <button
-              className=" py-1"
+              className=" py-1 text-black dark:text-titleGray"
               onClick={() => setCurrentPage(totalPages)}
               disabled={currentPage === totalPages}
             >
