@@ -151,7 +151,7 @@ const HedgeFund = () => {
         </h4>
         <h4 className="font-bold text-lg text-themeBlue">$ 4,517,633,663.68</h4>
       </div>
-      <div className="grid lg:grid-cols-12 grid-cols-1 gap-4 mt-16">
+      <div className="grid lg:grid-cols-12 grid-cols-1 gap-4 mt-5">
         <div className="lg:col-span-8">
         <AreaChartGraph/>
         </div>

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-
+import GradientButton from "../UIComponents/GradientButton";
+import WhiteBtn from "../UIComponents/WhiteBtn";
 interface FormData {
   firstName: string;
   lastName: string;
@@ -30,6 +31,8 @@ const ChangePasswordModal: React.FC<ProfileEditProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [passwordModalOpen, setPasswordModalOpen] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -105,19 +108,19 @@ const ChangePasswordModal: React.FC<ProfileEditProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-xl text-black dark:text-white"
+          className="absolute top-6 right-4 text-xl text-black dark:text-white"
         >
           ✖
         </button>
 
-        <h2 className="text-lg font-bold mb-4 text-black dark:text-white">
+        <h2 className="text-lg font-bold mb-2 text-black dark:text-white">
           Change Password
         </h2>
-
+        <div className="border-[1px] border-gray-700"></div>
         {/* Form Fields */}
         <div className="space-y-3">
-          <div className="relative mb-4">
-            <p className="text-black dark:text-white text-[13px] ">
+          <div className="relative mb-4 mt-4">
+            <p className="text-black  dark:text-white text-[14px] ">
               Old Password
             </p>
             <input
@@ -138,7 +141,7 @@ const ChangePasswordModal: React.FC<ProfileEditProps> = ({
             </button>
           </div>
           <div className="relative mb-4">
-            <p className="text-black dark:text-white text-[13px] ">
+            <p className="text-black dark:text-white text-[14px] ">
               New Password
             </p>
             <input
@@ -151,16 +154,12 @@ const ChangePasswordModal: React.FC<ProfileEditProps> = ({
               className="absolute right-3 top-[35px] text-gray-400"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? (
-                <EyeIcon size={18} />
-              ) : (
-                <EyeOffIcon size={18} />
-              )}
+              {showPassword ? <EyeIcon size={18} /> : <EyeOffIcon size={18} />}
             </button>
           </div>
           <div className="relative mb-4">
-            <p className="text-black dark:text-white text-[13px] ">
-            Confirm  Password
+            <p className="text-black dark:text-white text-[14px] ">
+              Confirm Password
             </p>
             <input
               type={showConfirmPassword ? "text" : "password"}
@@ -182,20 +181,21 @@ const ChangePasswordModal: React.FC<ProfileEditProps> = ({
         </div>
 
         {/* Buttons */}
-        <div className="flex justify-between mt-6">
-          <button
-            onClick={handleCancel}
-            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleUpdate}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
-          >
-            Update
-          </button>
-        </div>
+        <div className="flex justify-between gap-4 mt-6">
+  <GradientButton
+    text="Cancel"
+    className="w-1/2 px-6 py-3 text-center"
+    onClick={handleCancel}
+  />
+  <WhiteBtn
+    text="Save"
+    className="w-1/2 text-center"
+    onClick={handleUpdate}
+  />
+</div>
+
+
+
       </div>
     </div>
   );

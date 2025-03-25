@@ -22,6 +22,8 @@ import Forex from "./Pages/Forex";
 import Crypto from "./Pages/Crypto";
 import Platform from "./Pages/Platform";
 import Commodities from "./Pages/Commodities";
+import AccountType from "./Pages/AccountType";
+import LiveEvents from "./Pages/LiveEvents";
 import Indices from "./Pages/Indices";
 import Stock from "./Pages/Stock";
 import { Provider } from "react-redux";
@@ -88,6 +90,8 @@ const Layout = () => {
               <Route path="/transaction" element={<Transaction/>} />
               <Route path="/hedge-fund" element={<HedgeFund/>} />
               <Route path="/trade" element={<Trade/>}/>
+              <Route path="/account-type" element={<AccountType/>} />
+              <Route path="/live-events" element={<LiveEvents/>} />
               </Route>
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
