@@ -26,12 +26,15 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import SearchPopup from "./components/SearchPopup";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./Pages/404/NotFound";
+import ProtectedRouter from "./routes/ProtectedRouter";
+import ProtectedRouterLogin from "./routes/ProtectedRouterLogin";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register", "/reset_password", "/otp_validation", "/forget_password", "/register_successfull"].includes(location.pathname);
   // const isHome = location.pathname === "/home";
   const isHome =
-    location.pathname === "/home" || location.pathname === "/" || location.pathname === "" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/forget_password" || location.pathname === "/otp_validation" || location.pathname === "/reset_password" || location.pathname === "/register_successfull"
+    location.pathname === "/home" || location.pathname === "/" || location.pathname === ""|| location.pathname === "*" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/forget_password" || location.pathname === "/otp_validation" || location.pathname === "/reset_password" || location.pathname === "/register_successfull"
   return (
     <div className="flex flex-col min-h-screen">
       <Provider store={store}>
@@ -51,38 +54,44 @@ const Layout = () => {
     > */}
           <div
             className={`${isHome
-                ? ""
-                : "px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-[150px] 2xl:px-[250px] 3xl:px-[350px] 4xl:px-[550px] 5xl:px-[800px] 6xl:px-[950px] 7xl:px-[1000px] 8xl:px-[1250px] 9xl:px-[1400px] 10xl:px-[1600px] 11xl:px-[2100px] 12xl:px-[3000px] xs:py-xs-py xs-sm:py-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py"
+              ? ""
+              : "px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-[150px] 2xl:px-[250px] 3xl:px-[350px] 4xl:px-[550px] 5xl:px-[800px] 6xl:px-[950px] 7xl:px-[1000px] 8xl:px-[1250px] 9xl:px-[1400px] 10xl:px-[1600px] 11xl:px-[2100px] 12xl:px-[3000px] xs:py-xs-py xs-sm:py-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py"
               }`}
           >
             <Routes>
               <Route path="/" element={<Home />} />
-
+              <Route element={<ProtectedRouter />}>
               <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forget_password" element={<Forgetpassword />} />
-        <Route path="/otp_validation" element={<Otpvalidation />} />
-        <Route path="/reset_password" element={<Resetpassword />} />
-        <Route path="/register_successfull" element={<Success />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/forex" element={<Forex />} />
-        <Route path="/crypto" element={<Crypto />} />
-        <Route path="/platform" element={<Platform />} />
-        <Route path="/commodities" element={<Commodities />} />
-        <Route path="/indices" element={<Indices />} />
-        <Route path="/stock" element={<Stock />} />
-        <Route path="/stake" element={<Stake/>} />
-        <Route path="/deposit" element={<Deposit/>} />
-        <Route path="/withdraw" element={<Withdraw/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/notification" element={<Notification/>} />
-        <Route path="/support" element={<Support/>} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/forget_password" element={<Forgetpassword />} />
+              <Route path="/otp_validation" element={<Otpvalidation />} />
+              <Route path="/reset_password" element={<Resetpassword />} />
+              </Route>
+              <Route element={<ProtectedRouterLogin />}>
+              <Route path="/register_successfull" element={<Success />} />
+              <Route path="/wallet" element={<Wallet />} />
+              <Route path="/forex" element={<Forex />} />
+              <Route path="/crypto" element={<Crypto />} />
+              <Route path="/platform" element={<Platform />} />
+              <Route path="/commodities" element={<Commodities />} />
+              <Route path="/indices" element={<Indices />} />
+              <Route path="/stock" element={<Stock />} />
+              <Route path="/stake" element={<Stake />} />
+              <Route path="/deposit" element={<Deposit />} />
+              <Route path="/withdraw" element={<Withdraw />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/notification" element={<Notification />} />
+              <Route path="/support" element={<Support />} />
+              </Route>
+              {/* Catch-all route for 404 */}
+              <Route path="*" element={<NotFound />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/otp_validation" element={<Otpvalidation />} />
             </Routes>
           </div>
         </div>
         <SearchPopup />
-       <ScrollToTop/>
+        <ScrollToTop />
         {/* Footer stays at the bottom */}
         {!hideHeaderFooter && <Footer />}
       </Provider>

@@ -4,6 +4,7 @@ interface GradientCardProps {
     Icon: React.ElementType;
     className?: string;
     onClick?: () => void; // Make onClick optional
+    
 }
 
 export default function IconCard({ Icon, className, onClick }: GradientCardProps) {
