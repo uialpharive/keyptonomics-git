@@ -12,6 +12,10 @@ const data = [
 
 const PortfolioPieChart: React.FC = () => {
   return (
+    <div>
+    <h2 className="dark:text-white font-semibold text-lg mb-4">
+    Portfolio Allocation
+        </h2>
     <div className="w-full flex justify-end items-center">
       <PieChart width={300} height={300}>
         <Pie
@@ -30,6 +34,7 @@ const PortfolioPieChart: React.FC = () => {
         <Tooltip />
         <Legend />
       </PieChart>
+    </div>
     </div>
   );
 };

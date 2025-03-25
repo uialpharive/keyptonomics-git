@@ -40,6 +40,8 @@ export default {
                 inputDark: "#60608d",
                 tableBg:"#C2C2C24D",
                 inputLight: "#ebebeb",
+                darkText: "#0C7BEA",
+                cardHover:"#b6ccf37d",
 
             },
             screens: {
