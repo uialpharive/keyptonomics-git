@@ -37,7 +37,8 @@ export default {
                 cardBgDark: "#E6FFF80A",
                 inputBg:'#FFFFFF33',
                 stakeCard: "#2F2F8A99",
-                inputDark: "#60608d"
+                inputDark: "#60608d",
+                inputLight: "#ebebeb",
 
             },
             screens: {
