@@ -13,9 +13,11 @@ import Notification from "./Pages/Notification";
 import Support from "./Pages/Support";
 import Forgetpassword from "./Pages/Auth/Forgetpassword";
 import Resetpassword from "./Pages/Auth/Resetpassword";
+import HedgeFund from "./Pages/HedgeFund";
 import Otpvalidation from "./Pages/Auth/Otpvalidation";
 import Success from "./Pages/Auth/Success";
 import Footer from "./components/Footer";
+import Transaction from "./Pages/Transaction";
 import Forex from "./Pages/Forex";
 import Crypto from "./Pages/Crypto";
 import Platform from "./Pages/Platform";
@@ -78,6 +80,8 @@ const Layout = () => {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/notification" element={<Notification/>} />
         <Route path="/support" element={<Support/>} />
+        <Route path="/transaction" element={<Transaction/>} />
+        <Route path="/hedge-fund" element={<HedgeFund/>} />
             </Routes>
           </div>
         </div>
