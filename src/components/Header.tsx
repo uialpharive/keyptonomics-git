@@ -9,6 +9,7 @@ import HeaderBtn from "../UIComponents/HeaderBtn";
 import IconCard from "../UIComponents/IconCard";
 import BalanceSlider from "./BalanceSlider";
 import ThemeToggle from "./ThemeToggle";
+import UserMenu from "./UserMenu";
 // import ResponsiveColorBoxes from "./ResponsiveColorBoxes";
 // import CountryFlag from "./CountryFlag"
 
@@ -31,7 +32,6 @@ const availableBalance = [
 const Header = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const drawerRef = useRef<any>(null);
-
     // Toggle Drawer
     const toggleDrawer = () => {
         setIsDrawerOpen((prev) => !prev);
@@ -60,7 +60,7 @@ const Header = () => {
         { id: 1, Icon: IoIosNotifications },
         { id: 2, Icon: Flag },
         { id: 3, Icon: ThemeToggle },
-        { id: 4, Icon: User },
+        // { id: 4, Icon: User },
     ];
     return (
         <>
@@ -138,6 +138,7 @@ const Header = () => {
                         {iconData.map(({ id, Icon, }) => (
                             <IconCard key={id} Icon={Icon} />
                         ))}
+                        <UserMenu />
                     </div>
 
                 </nav>
@@ -166,22 +167,22 @@ const Header = () => {
                 </nav>
                 {/* Side Drawer */}
                 <div
-                    className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
+                    className={`block lg:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
                         } transition-transform duration-300 ease-in-out z-50`}
                     ref={drawerRef}
                 >
-                     <hr className="h-[3px] bg-themeBlue  border-0" />
+                    <hr className="h-[3px] bg-themeBlue  border-0" />
                     {/* Close Button */}
                     <div className="flex justify-between items-center px-5 py-4 border-b dark:border-gray-700">
                         <h2 className="text-lg font-bold dark:text-white">User Menu</h2>
-                        <IconCard Icon={ThemeToggle}/>
+                        <IconCard Icon={ThemeToggle} />
                         <button onClick={toggleDrawer}>
                             <X className="w-6 h-6 text-gray-600 dark:text-white" />
                         </button>
                     </div>
 
                     {/* Menu Items */}
-                    <div className="flex flex-col gap-5 px-1">
+                    <div className=" flex flex-col  gap-5 px-1">
                         <div className="flex flex-col gap-1 p-4">
                             {availableBalance.map((item, index) => (
                                 <div className="flex gap-4 items-center dark:bg-inputBg shadow-xl rounded-lg p-4" key={index}>
@@ -228,7 +229,7 @@ const Header = () => {
                 {/* Background overlay when menu is open */}
                 {isDrawerOpen && (
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                        className="block lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
                         onClick={toggleDrawer}
                     ></div>
                 )}
