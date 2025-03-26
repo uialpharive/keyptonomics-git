@@ -34,6 +34,7 @@ import NotFound from "./Pages/404/NotFound";
 import ProtectedRouter from "./routes/ProtectedRouter";
 import ProtectedRouterLogin from "./routes/ProtectedRouterLogin";
 import Trade from "./Pages/Trade";
+import ThemeToggle from "./components/ThemeToggle";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register", "/reset_password", "/otp_validation", "/forget_password", "/register_successfull"].includes(location.pathname);
@@ -63,6 +64,7 @@ const Layout = () => {
               : "px-4 xs:px-xs-px sm:px-sm-px md:px-md-px md-lg:px-md-lg-px lg:px-lg-px lg-xl:px-lg-xl-px xl:px-[150px] 2xl:px-[250px] 3xl:px-[350px] 4xl:px-[550px] 5xl:px-[800px] 6xl:px-[950px] 7xl:px-[1000px] 8xl:px-[1250px] 9xl:px-[1400px] 10xl:px-[1600px] 11xl:px-[2100px] 12xl:px-[3000px] xs:py-xs-py xs-sm:py-xs-sm-py sm:py-sm-py md:py-md-py lg:py-lg-py"
               }`}
           >
+            <div className="hidden">   <ThemeToggle/></div>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route element={<ProtectedRouter />}>
@@ -97,7 +99,9 @@ const Layout = () => {
               <Route path="*" element={<NotFound />} />
               <Route path="/home" element={<Home />} />
               <Route path="/otp_validation" element={<Otpvalidation />} />
+              
             </Routes>
+         
           </div>
         </div>
         <SearchPopup />

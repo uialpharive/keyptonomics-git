@@ -106,7 +106,7 @@ const Commodities = () => {
               <h5 className=" dark:text-white xs:text-[21px] sm:text-[24px]  md:text-[25px]  mt-7 mb-5 text-[30px]">
                 At Stakonomics, you can trade on the following metals:
               </h5>
-              <div className="ml-2">
+              <div className="ml-2 dark:text-white">
                 <li>Gold</li>
                 <li>ASX: Australian Securities Exchange</li>
                 <li>Silver</li>
