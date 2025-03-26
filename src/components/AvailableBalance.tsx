@@ -13,28 +13,28 @@ const AvailableBalance = () => {
     }}
   >
         <div className='xs:mb-3'>
-        <p className="text-2xl font-semibold dark:text-white">
+        <p className="text-[22px] font-semibold dark:text-white">
          Available Balance :
         </p>
-        <p className="text-3xl font-bold dark:text-white">$ 1,339.79</p>
+        <p className="text-[22px] font-extrabold dark:text-white">$ 1,339.79</p>
         </div>
         <div className='xs:mb-3'>
-        <p className="text-2xl font-semibold dark:text-white">
+        <p className="text-[22px] font-semibold dark:text-white">
          Staked Balance :
         </p>
-        <p className="text-3xl font-bold dark:text-white">$ 0.00</p>
+        <p className="text-[22px] font-extrabold dark:text-white">$ 0.00</p>
         </div>
         <div className='xs:mb-3'>
-        <p className="text-2xl font-semibold dark:text-white">
+        <p className="text-[22px] font-semibold dark:text-white">
          Account Balance :
         </p>
-        <p className="text-3xl font-bold dark:text-white">$ 1,339.79</p>
+        <p className="text-[22px] font-extrabold dark:text-white">$ 1,339.79</p>
         </div>
         <div className='xs:mb-3'>
-        <p className="text-2xl font-semibold dark:text-white">
+        <p className="text-[22px] font-semibold dark:text-white">
          Total P&L :
         </p>
-        <p className="text-3xl font-bold dark:text-white">$ 339.93</p>
+        <p className="text-[22px] font-extrabold dark:text-white">$ 339.93</p>
         </div>
         </div>
   )

@@ -11,6 +11,7 @@ import BalanceSlider from "./BalanceSlider";
 import ThemeToggle from "./ThemeToggle";
 import UserMenu from "./UserMenu";
 import { removeCookie } from "../lib/cookies";
+import { useNavigate } from "react-router-dom";
 // import ResponsiveColorBoxes from "./ResponsiveColorBoxes";
 // import CountryFlag from "./CountryFlag"
 
@@ -18,8 +19,8 @@ const menus = [
     { name: "Home", path: "/", icon: Home },
     { name: "Trade", path: "/trade", icon: Home },
     { name: "Stake", path: "/stake", icon: Home },
-    { name: "Transactions", path: "/transactions", icon: GrTransaction },
-    { name: "Hedge FlaskRound", path: "/hedge-flaskround", icon: Home },
+    { name: "Transactions", path: "/transaction", icon: GrTransaction },
+    { name: "Hedge FlaskRound", path: "/hedge-fund", icon: Home },
     { name: "Staking History", path: "/staking-history", icon: History },
     { name: "Live Events", path: "/live-events", icon: MdEventSeat },
 ];
@@ -31,6 +32,7 @@ const availableBalance = [
     { id: 3, text: "Available Balance", value: "$ 1,339.79" },
 ];
 const Header = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const drawerRef = useRef<any>(null);
@@ -127,7 +129,7 @@ const Header = () => {
                     <div className="flex gap-5">
                         <HeaderBtn
                             text="Wallet"
-                            onClick={() => alert("Button Clicked")}
+                            onClick={() => navigate("/wallet")}
                             paddingX="px-0"
                             paddingY="py-[8px]"
                             width="w-[100px]"
