@@ -10,6 +10,7 @@ import IconCard from "../UIComponents/IconCard";
 import BalanceSlider from "./BalanceSlider";
 import ThemeToggle from "./ThemeToggle";
 import UserMenu from "./UserMenu";
+import { removeCookie } from "../lib/cookies";
 import { useNavigate } from "react-router-dom";
 // import ResponsiveColorBoxes from "./ResponsiveColorBoxes";
 // import CountryFlag from "./CountryFlag"
@@ -39,7 +40,15 @@ const Header = () => {
     const toggleDrawer = () => {
         setIsDrawerOpen((prev) => !prev);
     };
+    const handleLogout = () => {
 
+        removeCookie("userToken")
+        removeCookie("loggedIn")
+        window.location.href = "/";
+        // setTimeout(() => {
+        //     window.location.href = "/";
+        // }, 1000);
+    };
     // Close drawer when clicking outside
     useEffect(() => {
         // const handleClickOutside = (event: any) => {
@@ -192,7 +201,7 @@ const Header = () => {
 
                     {/* Menu Items */}
                     <div className=" flex flex-col  gap-5 pt-5">
-                        <div className={`flex ${isDrawerOpen?"flex-col md:flex-row ":"hidden"} items-center justify-center bg-gray-100 dark:bg-inputBg shadow-xl rounded-md  px-5 `}>
+                        <div className={`flex ${isDrawerOpen ? "flex-col md:flex-row " : "hidden"} items-center justify-center bg-gray-100 dark:bg-inputBg shadow-xl rounded-md  px-5 `}>
                             {availableBalance.map((item, index) => (
                                 <div className="flex gap-4 items-center  p-4" key={index}>
                                     <div className="flex flex-col justify-end">
@@ -237,7 +246,7 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="px-5">
-                            <button className="py-2 w-full bg-gray-300 dark:bg-inputBg text-white dark:text-white hover:bg-gray-400  dark:hover:bg-gray-700 px-3 rounded">Logout</button>
+                            <button onClick={() => handleLogout()} className="py-2 w-full bg-gray-300 dark:bg-inputBg text-white dark:text-white hover:bg-gray-400  dark:hover:bg-gray-700 px-3 rounded">Logout</button>
                         </div>
                     </div>
                     <div className="flex flex-row justify-center items-center gap-5 pt-5">

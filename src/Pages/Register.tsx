@@ -74,7 +74,7 @@ const Register = () => {
          
         </div>
       </div>
-
+``
       {/* Login Card at the Bottom */}
       <div className="flex justify-center items-end pb-10 relative z-10">
         <div className=" border-[3px]  md:border-[3px] lg:border-[3px] rounded-lg shadow-lg xs:bg-none  bg-gradient-to-r from-blue-300/40 to-blue-700/20 grid grid-cols-1 md:grid-cols-2 gap-8 sm:w-[975px] xTTs:w-[500px] xs:m-2  max-w-[975px]   w-[500px] border-transparent md:border-[#00cdf9]">
