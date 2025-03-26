@@ -39,7 +39,7 @@ const Layout = () => {
   const hideHeaderFooter = ["/login", "/register", "/reset_password", "/otp_validation", "/forget_password", "/register_successfull"].includes(location.pathname);
   // const isHome = location.pathname === "/home";
   const isHome =
-    location.pathname === "/home" || location.pathname === "/" || location.pathname === ""|| location.pathname === "*" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/forget_password" || location.pathname === "/otp_validation" || location.pathname === "/reset_password" || location.pathname === "/register_successfull"
+    location.pathname === "/home"||location.pathname === "/trade" || location.pathname === "/" || location.pathname === ""|| location.pathname === "*" || location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/forget_password" || location.pathname === "/otp_validation" || location.pathname === "/reset_password" || location.pathname === "/register_successfull"
   return (
     <div className="flex flex-col min-h-screen">
       <Provider store={store}>
