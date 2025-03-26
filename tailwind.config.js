@@ -42,6 +42,7 @@ export default {
                 inputLight: "#ebebeb",
                 darkText: "#0C7BEA",
                 cardHover:"#b6ccf37d",
+                popDark:"#2C2C2C",
 
             },
             screens: {
