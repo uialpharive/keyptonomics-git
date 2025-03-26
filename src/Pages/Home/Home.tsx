@@ -11,10 +11,10 @@ import { removeCookie, setCookie } from "../../lib/cookies";
 
 const Home = () => {
     useEffect(()=>{
-        // setCookie('loggedIn', true)
-        // setCookie('userToken', "token")
-        removeCookie("userToken")
-        removeCookie("loggedIn")
+        setCookie('loggedIn', true)
+        setCookie('userToken', "token")
+        // removeCookie("userToken")
+        // removeCookie("loggedIn")
     },[])
     return (
         <>
