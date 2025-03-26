@@ -4,6 +4,7 @@ import bgimg from "../../assets/images/bgimage.jfif";
 import logo from "../../assets/images/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../../components/ThemeToggle";
 
 const OtpValidation = () => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -49,24 +50,25 @@ const OtpValidation = () => {
     >
       <ToastContainer />
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-[#1E2637]/40 backdrop-blur-md z-0"></div>
+      <div className="absolute inset-0 bg-white/70 dark:bg-[radial-gradient(circle,#19233a_60%,#07071d_100%)] opacity-90 backdrop-blur-md z-0"></div>
 
       {/* Centered Content */}
       <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-xl">
         {/* Logo */}
         <div className="flex justify-center items-center mb-8">
           <img src={logo} alt="Logo" className="h-10 sm:h-12" />
-          <p className="text-white text-lg sm:text-xl font-semibold ml-2">
+          <p className="dark:text-white text-black text-lg sm:text-xl font-semibold ml-2">
             KEYPTONOMICS
           </p>
+         
         </div>
 
         {/* OTP Card */}
-        <div className="bg-[#1e2637] shadow-lg rounded-lg p-6 sm:p-8 border-[3px] border-transparent md:border-[#00cdf9]">
-          <h2 className="text-white text-2xl sm:text-3xl font-bold mb-4 text-center">
+        <div className="dark:bg-[#1e2637] bg-white/40 shadow-lg rounded-lg p-6 sm:p-8 border-[3px] border-transparent ">
+          <h2 className="dark:text-white text-black text-2xl sm:text-3xl font-bold mb-4 text-center">
             Email Verification
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base text-center mb-6">
+          <p className="dark:text-white text-black text-sm sm:text-base text-center mb-6">
             Enter the OTP sent to your email to verify your account.
           </p>
 
@@ -81,13 +83,13 @@ const OtpValidation = () => {
                 value={digit}
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
-                className="w-12 h-12 xs:w-8 xs:h-8 text-center text-lg font-bold border border-gray-500 bg-gray-700 text-white rounded-md focus:ring-2 focus:ring-[#00cdf9] outline-none"
+                className="w-12 h-12 xs:w-8 xs:h-8 text-center text-lg font-bold border border-gray-500 text-white  placeholder-white placeholder:text-[13px] bg-[#7a8996] rounded-md focus:ring-2 focus:ring-[#00cdf9] outline-none"
               />
             ))}
           </div>
 
           {/* Resend OTP */}
-          <p className="text-gray-400 text-sm sm:text-base text-center mb-6">
+          <p className="dark:text-white text-black text-sm sm:text-base text-center mb-6">
             Didn't receive the OTP?{" "}
             <span className="text-[#00cdf9] cursor-pointer hover:underline">
               Resend OTP
