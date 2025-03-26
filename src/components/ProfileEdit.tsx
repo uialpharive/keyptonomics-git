@@ -99,7 +99,7 @@ const ProfileEdit: React.FC<ProfileEditProps> = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
-      <div className="bg-white dark:bg-themeBlack p-6 rounded-lg shadow-xl w-96 relative">
+      <div className="bg-white dark:bg-themeBlack p-6 rounded-lg shadow-xl w-[37rem] relative">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -132,10 +132,10 @@ const ProfileEdit: React.FC<ProfileEditProps> = ({
               Upload
             </label> */}
             <GradientButton
-            text="Upload"
-            className="w-1/2 px-3 py-3 text-center"
-            onClick={handleCancel}
-          />
+              text="Upload"
+              className="w-1/2 px-3 py-3 text-center"
+              onClick={handleCancel}
+            />
             <p className="text-xs  mt-1 text-black dark:text-titleGray">
               Max. upload size 2MB (Jpeg, Png)
             </p>
@@ -154,40 +154,44 @@ const ProfileEdit: React.FC<ProfileEditProps> = ({
 
         {/* Form Fields */}
         <div className="space-y-3">
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              First Name
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="Enter First Name"
-              value={formData.firstName}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
-            />
-            {errors.firstName && (
-              <p className="text-red-500 text-xs">{errors.firstName}</p>
-            )}
+          {/* First Name & Last Name on Same Line */}
+          <div className="grid grid-cols-1  gap-4">
+            <div>
+              <label className="block text-sm font-medium text-black dark:text-titleGray">
+                First Name
+              </label>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Enter First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
+              />
+              {errors.firstName && (
+                <p className="text-red-500 text-xs">{errors.firstName}</p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-black dark:text-titleGray">
+                Last Name
+              </label>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Enter Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
+              />
+              {errors.lastName && (
+                <p className="text-red-500 text-xs">{errors.lastName}</p>
+              )}
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              Last Name
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Enter Last Name"
-              value={formData.lastName}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
-            />
-            {errors.lastName && (
-              <p className="text-red-500 text-xs">{errors.lastName}</p>
-            )}
-          </div>
-
+          {/* Phone Number in a Single Line */}
           <div>
             <label className="block text-sm font-medium text-black dark:text-titleGray">
               Phone Number
@@ -200,7 +204,7 @@ const ProfileEdit: React.FC<ProfileEditProps> = ({
                 name: "phone",
                 required: true,
                 className:
-                  "w-full p-2 border rounded-lg  dark:text-white dark:bg-[#575858]",
+                  "w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]",
               }}
               inputStyle={{ paddingLeft: "3rem" }}
             />
@@ -209,68 +213,74 @@ const ProfileEdit: React.FC<ProfileEditProps> = ({
             )}
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              Address
-            </label>
-            <input
-              type="text"
-              name="address"
-              placeholder="Enter Address"
-              value={formData.address}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
-            />
-            {errors.address && (
-              <p className="text-red-500 text-xs">{errors.address}</p>
-            )}
-          </div>
+          {/* Address on the Left, City + Country + Zip Code on the Right */}
+          <div className="grid grid-cols-1  gap-4">
+            {/* Address - Left Side */}
+            <div>
+              <label className="block text-sm font-medium text-black dark:text-titleGray">
+                Address
+              </label>
+              <input
+                name="address"
+                placeholder="Enter Address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full  p-2 border rounded-lg  dark:text-white dark:bg-[#575858]"
+              />
+              {errors.address && (
+                <p className="text-red-500 text-xs">{errors.address}</p>
+              )}
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              City
-            </label>
-            <input
-              type="text"
-              name="city"
-              placeholder="Enter City"
-              value={formData.city}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
-            />
-            {errors.city && (
-              <p className="text-red-500 text-xs">{errors.city}</p>
-            )}
-          </div>
+            {/* Right Side: City, Country, Zip Code */}
+            <div className="grid grid-cols-3 xs:grid-cols-1 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-black dark:text-titleGray">
+                  City
+                </label>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="Enter City"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
+                />
+                {errors.city && (
+                  <p className="text-red-500 text-xs">{errors.city}</p>
+                )}
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              Country
-            </label>
-            <input
-              type="text"
-              name="country"
-              value="Australia"
-              disabled
-              className="w-full p-2 border rounded-lg bg-white dark:text-white text-black dark:bg-[#575858]"
-            />
-          </div>
+              <div>
+                <label className="block text-sm font-medium text-black dark:text-titleGray">
+                  Country
+                </label>
+                <input
+                  type="text"
+                  name="country"
+                  value="Australia"
+                  disabled
+                  className="w-full p-2 border rounded-lg bg-white dark:text-white text-black dark:bg-[#575858]"
+                />
+              </div>
 
-          <div>
-            <label className="block text-sm font-medium text-black dark:text-titleGray">
-              Postal / Zip Code
-            </label>
-            <input
-              type="text"
-              name="pincode"
-              placeholder="Enter Postal / Zip Code"
-              value={formData.pincode}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
-            />
-            {errors.pincode && (
-              <p className="text-red-500 text-xs">{errors.pincode}</p>
-            )}
+              <div>
+                <label className="block text-sm font-medium text-black dark:text-titleGray">
+                  Postal / Zip Code
+                </label>
+                <input
+                  type="text"
+                  name="pincode"
+                  placeholder="Enter Postal / Zip Code"
+                  value={formData.pincode}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded-lg dark:text-white dark:bg-[#575858]"
+                />
+                {errors.pincode && (
+                  <p className="text-red-500 text-xs">{errors.pincode}</p>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
