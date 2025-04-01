@@ -211,7 +211,7 @@ const Stake = () => {
       ${
         activeTab === "tab1"
           ? "bg-gradient-to-r from-[#01D3FF] to-[#2954A3] text-white"
-          : "bg-white text-black hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white"
+          : "bg-white text-black dark:bg-rootBgColor dark:text-white hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white"
       }`}
               >
                 Flexible
@@ -227,7 +227,7 @@ const Stake = () => {
       ${
         activeTab === "tab2"
           ? "bg-gradient-to-r from-[#01D3FF] to-[#2954A3] text-white"
-          : "bg-white text-black hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white"
+          : "bg-white text-black  dark:bg-rootBgColor dark:text-white hover:bg-gradient-to-r hover:from-[#01D3FF] hover:to-[#2954A3] hover:text-white"
       }`}
               >
                 Fixed
@@ -239,32 +239,32 @@ const Stake = () => {
             <input
               placeholder="search"
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="p-2 rounded-md placeholder-stone-800 focus-visible:outline-none"
+              className="p-2 rounded-md dark:placeholder-[#FFFFFF] placeholder-stone-800 focus-visible:outline-none"
               style={{
                 backdropFilter: "blur(20.107913970947266px)",
                 boxShadow: "0px 39.87px 39.87px 0px #452A7C26",
-                background: "#dde4f1",
+                background: "transparent",
                 color: "#000",
                 border: "1.6px solid #f6f8ffb5",
               }}
             />
             <Search
               size={24}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 dark:text-[white]"
             />
-            {/* <input type='text' className='px-4 py-2 text-sm font-medium transition text-gray-500 hover:text-blue-500' placeholder='Search'></input> */}
+           
           </div>
         </div>
         <div className="py-5">
           {activeTab === "tab1" && (
             <>
               <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-3">
-                {stakeData.map((item) => (
+              {filtercoin.map((item) => (
                   <div
                     key={item.id}
                     className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3]"
                   >
-                    <div className="flex flex-col bg-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
+                    <div className="flex flex-col bg-white dark:bg-black dark:text-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
                       <div className="flex items-center gap-3 mb-3">
                         <img
                           src={item.icon}
@@ -298,7 +298,7 @@ const Stake = () => {
                         paddingY="py-1"
                         fontSize="text-sx"
                         className="hover:from-[#fff] hover:to-[#FFFFFF] mt-6 mx-auto w-fit text-center flex 
-            justify-center rounded-lg hover:!text-black border-2 hover:!border-[#2954A3]"
+            justify-center rounded-2xl hover:!text-black  hover:!border-[#2954A3]"
                       />
                     </div>
                   </div>
@@ -309,7 +309,7 @@ const Stake = () => {
           {activeTab === "tab2" && (
             <>
               <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-3">
-                {stakeData.map((item) => (
+                {filtercoin.map((item) => (
                   <div
                     key={item.id}
                     className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3]"
@@ -360,12 +360,12 @@ const Stake = () => {
       </div>
       {selectedStake !== null && (
         <div className="fixed inset-0 flex z-50 items-center justify-center bg-black bg-opacity-50">
-          <div className="w-96 p-4 bg-white text-black rounded-xl shadow-lg">
+          <div className="w-96 p-4 bg-white text-black dark:bg-black dark:text-white  rounded-xl shadow-lg">
             <div className="flex justify-between">
-              <h2 className="text-xl font-semibold mb-4">Staking </h2>
+              <h2 className="text-xl font-medium mb-4">Staking </h2>
               {/* {stakeData[selectedStake - 1].name} */}
               <X
-                className="text-[#2B2B2B]"
+                className="text-[#2B2B2B] dark:text-[#FFFFFF]"
                 onClick={() => setSelectedStake(null)}
               />
             </div>
@@ -373,63 +373,63 @@ const Stake = () => {
               <input
                 type="number"
                 placeholder="0.000000"
-                className="w-full py-2 pl-4 pr-14 text-lg border border-black rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-700  appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                className="w-full py-2 pl-4 pr-14 text-lg bg-[#07071A26] border border-[#1E1E1E] rounded-3xl focus:outline-none focus:ring-2 focus:ring-blue-400 text-[#898989]  appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               />
 
               {/* BTC Label */}
-              <span className="absolute right-4 pl-2 h-11 content-center top-1/2 transform -translate-y-1/2  border-black border-l-2">
+              <span className="absolute right-4 pl-2 h-11 content-center top-1/2 transform -translate-y-1/2  border-[#1E1E1E] border-l-2">
                 {stakeData[selectedStake - 1].title}
               </span>
             </div>
             <p className="text-gray-500 text-sm mt-2 ml-4">≈ $0</p>
             <div className="flex justify-between mt-5">
               <p>Interest</p>
-              <p className="font-semibold">
+              <p className="font-medium">
                 0 {stakeData[selectedStake - 1].title} ≈ $ 0
               </p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Available Balance</p>
-              <p className="font-semibold">
+              <p className="font-medium">
                 0.0000 {stakeData[selectedStake - 1].title}
               </p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Minimum Stake</p>
-              <p className="font-semibold">
+              <p className="font-medium">
                 0.001 {stakeData[selectedStake - 1].title}
               </p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Maximum Stake</p>
-              <p className="font-semibold">
+              <p className="font-medium">
                 10,000 {stakeData[selectedStake - 1].title}
               </p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Withdrawal Term</p>
-              <p className="font-semibold">Flexible</p>
+              <p className="font-medium">Flexible</p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Redemption Period</p>
-              <p className="font-semibold">1 Days</p>
+              <p className="font-medium">1 Days</p>
             </div>
             <div className="flex justify-between mt-1">
               <p>Duration (Days)</p>
-              <p className="font-semibold">365</p>
+              <p className="font-medium">365</p>
             </div>
             <div className="flex justify-between mt-1">
               <p>APY</p>
-              <p className="font-semibold">9.5%</p>
+              <p className="font-medium">9.5%</p>
             </div>
 
-            <div className="mt-6  flex w-full justify-between gap-2">
+            <div className="mt-6  flex w-full gap-4">
               <WhiteBtn
                 text={"Cancel"}
-                width="!w-full"
+           className="w-6/12 !translate-y-0"
                 onClick={() => setSelectedStake(null)}
               />
-              <GradientButton text={"Confirm"} className="!w-full" />
+              <GradientButton text={"Confirm"} className="w-6/12 !translate-y-0" />
             </div>
           </div>
         </div>
