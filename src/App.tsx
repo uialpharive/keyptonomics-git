@@ -35,6 +35,7 @@ import ProtectedRouter from "./routes/ProtectedRouter";
 import ProtectedRouterLogin from "./routes/ProtectedRouterLogin";
 import Trade from "./Pages/Trade";
 import ThemeToggle from "./components/ThemeToggle";
+import StakingHistory from "./Pages/StakingHistory/StakingHistory";
 const Layout = () => {
   const location = useLocation();
   const hideHeaderFooter = ["/login", "/register", "/reset_password", "/otp_validation", "/forget_password", "/register_successfull"].includes(location.pathname);
@@ -94,6 +95,8 @@ const Layout = () => {
               <Route path="/trade" element={<Trade/>}/>
               <Route path="/account-type" element={<AccountType/>} />
               <Route path="/live-events" element={<LiveEvents/>} />
+              <Route path="/stakinghistory" element={<StakingHistory/>} />
+           
               </Route>
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />

@@ -239,12 +239,11 @@ const Stake = () => {
             <input
               placeholder="search"
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="p-2 rounded-md dark:placeholder-[#FFFFFF] placeholder-stone-800 focus-visible:outline-none"
+              className="p-2 rounded-md dark:placeholder-[#FFFFFF] dark:text-white placeholder-stone-800 focus-visible:outline-none"
               style={{
                 backdropFilter: "blur(20.107913970947266px)",
                 boxShadow: "0px 39.87px 39.87px 0px #452A7C26",
                 background: "transparent",
-                color: "#000",
                 border: "1.6px solid #f6f8ffb5",
               }}
             />
@@ -309,12 +308,12 @@ const Stake = () => {
           {activeTab === "tab2" && (
             <>
               <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-3">
-                {filtercoin.map((item) => (
+              {filtercoin.map((item) => (
                   <div
                     key={item.id}
                     className="relative p-[2px] rounded-xl bg-gradient-to-r from-[#01D3FF] to-[#2954A3]"
                   >
-                    <div className="flex flex-col bg-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
+                    <div className="flex flex-col bg-white dark:bg-black dark:text-white rounded-xl h-full w-full p-4 hover:bg-themeBlueT hover:text-white">
                       <div className="flex items-center gap-3 mb-3">
                         <img
                           src={item.icon}
@@ -348,7 +347,7 @@ const Stake = () => {
                         paddingY="py-1"
                         fontSize="text-sx"
                         className="hover:from-[#fff] hover:to-[#FFFFFF] mt-6 mx-auto w-fit text-center flex 
-            justify-center rounded-lg hover:!text-black border-2 hover:!border-[#2954A3]"
+            justify-center rounded-2xl hover:!text-black  hover:!border-[#2954A3]"
                       />
                     </div>
                   </div>
