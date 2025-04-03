@@ -164,7 +164,7 @@ const Profile: React.FC = () => {
           onUpdate={handleChangePassword}
         />
       </div>
-      <div className="py-6 px-6 xl:px-14 mx-auto bg-tradeCardBg rounded-lg shadow-md">
+      <div className="xs:!p-4 py-6 px-6 xl:px-14 mx-auto bg-tradeCardBg rounded-lg shadow-md">
         <h2 className="text-lg font-semibold text-themeBlue mb-4">
           Login Activity
         </h2>

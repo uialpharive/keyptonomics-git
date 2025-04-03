@@ -126,5 +126,5 @@ export default {
             scroll: "scroll 30s linear infinite", 
           },    
     },
-    plugins: [],
+    plugins: [require("tailwind-scrollbar")],
 };
